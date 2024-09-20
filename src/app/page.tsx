@@ -10,13 +10,13 @@ export default function Home() {
   return (
     <div className="">
       <main className="bg-white p-10 flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <div>
+        <div className="flex gap-2">
           <h2>Buttons</h2>
           <BlueButton label="Button"/>
           <OrangeButton/>
           <BlueOutlineButton label="Arrow Button" afterIcon="yes"/>
           <BlueOutlineButton label="Arrow Button" beforeIcon="yes"/>
-          <OutlineButton/>
+          <OutlineButton label="Button"/>
         </div>
         <div className="flex flex-col gap-8 row-start-2">
           <h2>Course Cards</h2>
