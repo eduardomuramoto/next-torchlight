@@ -174,10 +174,13 @@ export default function Footer() {
         </div>
       </div>
     
-      <div className="p-6 text-center">
-        <span>© 2024:</span>
-        <a className="font-semibold" href="https://torchlight.foundation/">Torchlight Foundation</a>
-        <span> - All Rights Reserved</span>
+      <div className="flex p-6 justify-end gap-6">
+        <span>© 2024 
+        <a href="https://torchlight.foundation/"> Torchlight Foundation </a>
+         - All Rights Reserved</span>
+        <a href="#">Privacy</a>
+        <a href="#">Terms & Conditions</a>
+        
       </div>
     </footer>
   );
