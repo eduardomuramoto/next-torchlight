@@ -1,10 +1,11 @@
-"use client";
 import Image from "next/image";
 import logo from "@/../public/images/Logo_Horizontal.png"
 import OutlineButton from "./Buttons/outlineButton";
 import PhoneOutlineComponent from "./Icons/phone-outline";
 import PhoneComponent from "./Icons/phone";
-import { gql, useQuery } from '@apollo/client';
+
+
+
 
 
 
@@ -26,17 +27,6 @@ import { gql, useQuery } from '@apollo/client';
 // console.log(props);
 
 export default function Header() {
-  const GET_MENU = gql`
-  query GetMenu {
-    menus {
-      id
-    }
-  }
-`;
-  const { data, loading, error } = useQuery(GET_MENU, { 
-    variables: { id: 1 }
-  });
-  console.log(data);
   return (
     <header className="bg-foreground text-center text-surface/75 text-white/75 lg:text-left sticky top-0 z-10">
       <div className="px-20">

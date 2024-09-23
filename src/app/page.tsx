@@ -21,13 +21,12 @@ export default function Home() {
         <div className="flex flex-col gap-8 row-start-2">
           <h2>Course Cards</h2>
           <div className="flex flex-wrap justify-between gap-10">
-            <CourseCard/>
-            <CourseCard/>
-            <CourseCard/>
-            <CourseCard/>
-            <CourseCard/>
-            <CourseCard/>
-            <CourseCard/>
+            <CourseCard 
+            courseColor="fill-foreground" 
+            title="Skills4life:Domestic Violence Prevention & Awareness Training Course"
+            category="Wellbeing"
+            price="55"
+             />
           </div>
         </div>
         <div className="flex flex-col gap-8 row-start-2 w-full">
