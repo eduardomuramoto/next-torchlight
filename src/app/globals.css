@@ -6,7 +6,18 @@
   --background: #013477;
   --foreground: #FF8725;
   --light-foreground: #FFE7D3;
-  ;
+  --course-wellbeing-1:#FFC625;
+  --course-wellbeing-2:#FF8725;
+  --course-wellbeing-3:#F15000;
+  --course-relationship-1:#F20270;
+  --course-relationship-2:#E14150;
+  --course-relationship-3:#7C005C;
+  --course-corporate-1:#12B0FF;
+  --course-corporate-2:#002DB7;
+  --course-corporate-3:#013477;
+  --course-community-1:#96C500;
+  --course-community-2:#667000;
+  --course-community-3:#165000;
 }
 
 @media (prefers-color-scheme: dark) {
