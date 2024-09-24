@@ -28,7 +28,7 @@ import PhoneComponent from "./Icons/phone";
 
 export default function Header() {
   return (
-    <header className="bg-foreground text-center text-surface/75 text-white/75 lg:text-left sticky top-0 z-10">
+    <header className="bg-foreground shadow-md text-center text-surface/75 text-white/75 lg:text-left sticky top-0 z-10">
       <div className="px-20">
         <ul className="flex justify-between">
           <li className="flex items-center py-1"><PhoneOutlineComponent/>000</li>
