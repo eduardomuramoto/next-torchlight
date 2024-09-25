@@ -1,42 +1,54 @@
+import EnquirySection from "@/components/ ContactSection/enquiry";
 import BlueButton from "@/components/Buttons/blueButton";
 import BlueOutlineButton from "@/components/Buttons/blueOutlineButton";
 import OrangeButton from "@/components/Buttons/orangeButton";
 import OutlineButton from "@/components/Buttons/outlineButton";
 import CourseCard from "@/components/Cards/courseCard";
 import ServiceCard from "@/components/Cards/serviceCard";
+import JumboHeader from "@/components/Sections/pageJumboHeader";
+import SubNavBar from "@/components/Sections/pageSubNavBar";
 
 
 export default function Home() {
   return (
     <div className="">
-      <main className="bg-white p-10 flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <div className="flex gap-2">
-          <h2>Buttons</h2>
-          <BlueButton label="Button"/>
-          <OrangeButton/>
-          <BlueOutlineButton label="Arrow Button" afterIcon="yes"/>
-          <BlueOutlineButton label="Arrow Button" beforeIcon="yes"/>
-          <OutlineButton label="Button"/>
-        </div>
-        <div className="flex flex-col gap-8 row-start-2">
-          <h2>Course Cards</h2>
+      <main className="flex flex-col row-start-2 items-center sm:items-start">
+        <JumboHeader/>
+        <SubNavBar />
+      
+        <div className="bg-lightBackground w-full p-10 px-20 flex flex-col gap-8 row-start-2">
+          <h2 className="font-teko text-5xl uppercase font-semibold pb-6 text-background">Our Courses</h2>
           <div className="flex flex-wrap justify-between gap-10">
             <CourseCard 
-            courseColor="fill-foreground" 
+            courseColor="fill-wellbeing1" 
+            title="Make Your Own Strengths Card Workshop"
+            category="Wellbeing"
+            price="55"
+             />
+            <CourseCard 
+            courseColor="fill-wellbeing2" 
             title="Skills4life:Domestic Violence Prevention & Awareness Training Course"
+            category="Wellbeing"
+            price="55"
+             />
+            <CourseCard 
+            courseColor="fill-wellbeing3" 
+            title="Overcoming Obstacles: A Comprehensive Approach to Healing and Resilience"
             category="Wellbeing"
             price="55"
              />
           </div>
         </div>
-        <div className="flex flex-col gap-8 row-start-2 w-full">
-          <h2>Service Cards</h2>
+        
+        <div className="bg-extraLightForeground w-full p-10 px-20 flex flex-col gap-8 row-start-2">
+          <h2 className="font-teko text-5xl uppercase font-semibold pb-6 text-background">Our Services</h2>
           <div className="flex flex-wrap justify-between gap-10">
-            <ServiceCard/>
-            <ServiceCard/>
-            <ServiceCard/>
+            <ServiceCard title="Counselling" description="Our experienced  professionals offer guidance and support for personal growth and  healing."/>
+            <ServiceCard title="Advocacy" description="We support and advocate for women affected by domestic violence through various essential services."/>
+            <ServiceCard title="Legal Consultation" description="We offer professional legal consultation services to guide you through your legal matters with expertise and care."/>
           </div>
         </div>
+        <EnquirySection/>
       </main>
       
     </div>

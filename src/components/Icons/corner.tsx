@@ -1,7 +1,6 @@
 import * as React from "react"
-import { SVGProps } from "react"
 
-export default function CornerComponent({className, colour: color}:{className: string, colour:string}) {
+export default function CornerComponent({className, color: color}:{className: string, color:string}) {
     return (
   <svg width="185" height="111" viewBox="0 0 185 111" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
 <g filter="url(#filter0_d_507_1792)">
