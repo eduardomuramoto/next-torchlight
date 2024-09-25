@@ -5,7 +5,9 @@
 :root {
   --background: #013477;
   --foreground: #FF8725;
+  --light-background: #F6FAF9;
   --light-foreground: #FFE7D3;
+  --xlight-foreground: #FFF5EE;
   --course-wellbeing-1:#FFC625;
   --course-wellbeing-2:#FF8725;
   --course-wellbeing-3:#F15000;

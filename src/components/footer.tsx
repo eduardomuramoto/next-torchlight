@@ -7,7 +7,7 @@ export default function Footer() {
       <div
         className="flex flex-col dark:border-white/10">
         <h6
-              className="mb-4 flex justify-start font-teko font-semibold uppercase">
+              className="text-2xl mb-4 flex justify-start font-teko font-semibold uppercase">
               Follow Us
         </h6>
         <div className="flex justify-center">
@@ -70,7 +70,7 @@ export default function Footer() {
         <div
         className="flex flex-col justify-center dark:border-white/10 lg:justify-between">
         <h6
-              className="mb-4 flex justify-start font-teko font-semibold uppercase">
+              className="text-2xl mb-4 flex justify-start font-teko font-semibold uppercase">
               Join Our Newsletter
         </h6>
         <div className="flex flex-col justify-center">

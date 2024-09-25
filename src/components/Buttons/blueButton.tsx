@@ -1,16 +1,11 @@
-import Image from "next/image"
+import ArrowComponent from "../Icons/arrow"
+import MiniLogoComponent from "../Icons/miniLogo"
 
-export default function BlueButton({label, beforeIcon, afterIcon }:{ label:string, beforeIcon?: string, afterIcon?:string}) {
+export default function BlueButton({label, beforeIcon, afterIcon, className }:{ label:string, beforeIcon?: string, afterIcon?:string, className?: string}) {
   return (
-    <button className="flex items-center bg-background text-nowrap transition-all duration-150 ease-in-out hover:bg-blue-800 text-white font-semibold hover:text-white py-2 px-4 rounded">
-      {beforeIcon?<Image src={beforeIcon}
-                  alt="Logo Torchlight Foundation"
-                  className="lazyload pb-2 pr-1"
-                  width={50}/> :""}
-                  {label}
-                  {afterIcon?<Image src={afterIcon}
-                  alt="Logo Torchlight Foundation"
-                  className="lazyload pb-2 pr-1"
-                  width={50}/>:""}
+    <button className={className+" group flex items-center bg-background text-nowrap transition-all duration-150 ease-in-out hover:bg-blue-800 text-white font-semibold hover:text-white py-2 px-8 rounded"}>
+           {beforeIcon?<MiniLogoComponent className="mr-1" color="blue"/> :""}  
+              {label}
+            {afterIcon?<ArrowComponent color="stroke-white" className="transition-all duration-150 ease-in-out group-hover:translate-x-1 ml-1"/>:""}
     </button>
   )}
