@@ -27,7 +27,9 @@ export default function CourseCard({courseColor, title, category, price}:CourseC
       </div>
       <p className="text-2xl font-medium">{"$" + price + "/Guest"}</p>
       <div className="flex w-full justify-end mt-4">
-      <BlueOutlineButton label="View Course" afterIcon="yes"/>
+      <BlueOutlineButton label="View Course" afterIcon="yes" url="/get-support/courses/skills4life"/>
+      {/* <button className="css style SS_ProductCheckout" type="button" data-id="1" data-email="<userEmail>" data-url="http://localhost:1337"> BuyNow </button> */}
+
       </div>
       </div>
     </div>
