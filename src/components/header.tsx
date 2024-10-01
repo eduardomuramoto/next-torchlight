@@ -4,27 +4,35 @@ import OutlineButton from "./Buttons/outlineButton";
 import PhoneOutlineComponent from "./Icons/phone-outline";
 import PhoneComponent from "./Icons/phone";
 
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
+const client = new ApolloClient({
+  uri: `${process.env.CMS_GRAPHQL}`,
+  cache: new InMemoryCache(),
+});
+let menuArr: [];
+client
+  .query({
+    query: gql`query Menu {
+      menusMenu(id: 1) {
+  data {
+    id
+    attributes {
+     items{
+      data{
+        attributes{
+          title
+          url
+        }
+      }
+    }
+    }
+  }
+}
+    }`,
+  })
+  .then((result) => {menuArr = result.data.menusMenu.data.attributes.items.data});
 
-
-
-
-
-
-// export async function getStaticProps() {
-//   const res = await fetch('http://localhost:1337/api/menus/1?nested&populate=*',{
-//     method: "GET",
-//     headers: {
-//       "X-Auth-Token": "ef72570ff371408f9668e414353b7b2e",
-//       "Content-Type": "application/json"
-//     }});
-//   const mainMenu = await res.json();
-//   console.log(mainMenu);
-//   return { props: { mainMenu } };
-// }
-
-// getStaticProps();
-// console.log(props);
 
 export default function Header() {
   return (
@@ -45,18 +53,11 @@ export default function Header() {
                 />
                 <nav className="w-3/5 px-20 flex items-center">
                   <ul className="w-full flex justify-between items-center text-background font-semibold">
-                    <li className="cursor-pointer group relative">About Us
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-background transition-all group-hover:w-full"></span>
-                    </li>
-                    <li className="cursor-pointer group relative">Get Support
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-background transition-all group-hover:w-full"></span>
-                    </li>
-                    <li className="cursor-pointer group relative">Our Projects
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-background transition-all group-hover:w-full"></span>
-                    </li>
-                    <li className="cursor-pointer group relative">Get Involved
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-background transition-all group-hover:w-full"></span>
-                    </li>
+                    {menuArr?.map((menuItem)=>{
+                      return(<li className="cursor-pointer group relative" key={menuItem.attributes.url}>{menuItem.attributes.title}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-background transition-all group-hover:w-full"></span>
+                      </li>)
+                    })}
                   </ul>
                 </nav>
                 <OutlineButton label="Donate Now" beforeIcon="yes"/>

@@ -7,7 +7,7 @@ import SubNavBar from "@/components/Sections/pageSubNavBar";
 
 
 
-export default function Home() {
+export default function GetSupportPage() {
  
   return (
     <div className="">
