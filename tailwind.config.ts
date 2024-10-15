@@ -28,6 +28,8 @@ const config: Config = {
         community1: "var(--course-community-1)",
         community2: "var(--course-community-2)",
         community3: "var(--course-community-3)",
+        redBackground: "var(--red-background)",
+        exitRed: "var(--exit-red)",
       },
       fontFamily: {
         teko: ['var(--font-teko)'],

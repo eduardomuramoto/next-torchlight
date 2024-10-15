@@ -12,7 +12,7 @@ export default function GetSupportPage() {
   return (
     <div className="">
       <main className="flex flex-col row-start-2 items-center sm:items-start">
-        <JumboHeader/>
+        <JumboHeader subTitle="Get Support" title="Our Programmes & Services"/>
         <SubNavBar />
         <CoursesSection />
         {/* <div className="bg-lightBackground w-full p-10 px-20 flex flex-col gap-8 row-start-2">

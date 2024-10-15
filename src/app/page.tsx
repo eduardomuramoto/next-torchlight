@@ -2,7 +2,7 @@ import EnquirySection from "@/components/ ContactSection/enquiry";
 import CourseCard from "@/components/Cards/courseCard";
 import ServiceCard from "@/components/Cards/serviceCard";
 import CoursesSection from "@/components/Sections/CourseSection";
-import JumboHeader from "@/components/Sections/pageJumboHeader";
+import HomeJumboHeader from "@/components/Sections/homeJumboHeader";
 import SubNavBar from "@/components/Sections/pageSubNavBar";
 
 
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="">
       <main className="flex flex-col row-start-2 items-center sm:items-start">
-        <JumboHeader/>
+        <HomeJumboHeader/>
         <SubNavBar />
         <CoursesSection />
         {/* <div className="bg-lightBackground w-full p-10 px-20 flex flex-col gap-8 row-start-2">

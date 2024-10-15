@@ -3,6 +3,7 @@ import { Teko, Roboto } from 'next/font/google'
 import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import ExitButton from "@/components/Buttons/exitButton";
 
 const teko = Teko({
   weight: '400',
@@ -25,14 +26,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${roboto.className} ${teko.variable} antialiased`}
-      >
-        <Header/>
-        {children}
-        <Footer/>
-      </body>
-    </html>
+      <html lang="en">
+        <body
+          className={`${roboto.className} ${teko.variable} antialiased`}
+          >
+          <Header/>
+          {children}
+          <ExitButton/>
+          <Footer/>
+        </body>
+      </html>
   );
 }

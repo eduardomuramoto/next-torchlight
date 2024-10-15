@@ -17,6 +17,7 @@ client
                 data{
                   attributes{
                     CourseName
+                    slug
                   }
                 }
               }
@@ -43,6 +44,7 @@ export default function CoursesSection() {
                         title={course.attributes.CourseName}
                         category="Wellbeing"
                         price="55"
+                        slug={course.attributes.slug}
                          />)
                     })}
     </div>
