@@ -6,7 +6,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 let coursesArr: [];
-client
+await client
   .query({
     query: gql`query Courses {
       getSupport{

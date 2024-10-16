@@ -15,7 +15,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 let menuArr: [];
-client
+await client
   .query({
     query: gql`query Menu {
       menusMenu(id: 1) {

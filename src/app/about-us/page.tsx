@@ -10,6 +10,7 @@ export default function GetSupportPage() {
     <div className="">
       <main className="flex flex-col row-start-2 items-center sm:items-start">
         <JumboHeader 
+          alignTop={false}
           subTitle="About Us" 
           title="Our Mission" 
           imgUrl={jumboPhoto} 
