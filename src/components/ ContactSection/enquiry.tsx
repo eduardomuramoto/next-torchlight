@@ -82,8 +82,8 @@ export default function EnquirySection() {
       <div className="w-full">
         <h3 className="font-teko text-6xl uppercase font-semibold pb-6 text-background">Have a Question?</h3>
         <p className="font-teko text-6xl uppercase font-semibold pb-6 text-background">We are here to help.</p>
-        <form onSubmit={handleSubmit} className="flex gap-20 w-full">
-          <div className="w-1/3">
+        <form onSubmit={handleSubmit} className="flex flex-wrap lg:flex-nowrap lg:gap-20 w-full">
+          <div className="w-full lg:w-1/3">
             <div className="pb-2">
               <label className="text-background font-semibold" htmlFor="name">Your Name *</label>
               <input
@@ -128,7 +128,7 @@ export default function EnquirySection() {
               />
             </div>
           </div>
-          <div className="w-2/3 h-full ">
+          <div className="w-full lg:w-2/3 h-full ">
             <div className="pb-6">
               <label className="text-background font-semibold" htmlFor="message">Message *</label>
               <textarea
