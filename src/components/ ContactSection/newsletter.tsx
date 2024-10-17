@@ -50,7 +50,7 @@ export default function NewsletterComponent() {
         Join Our Newsletter
       </h6>
       <div className="flex flex-col justify-center">
-        <p>Subscribe to be the first to know when Justice Radio launches and get more support guides.</p>
+        <p className="text-start">Subscribe to be the first to know when Justice Radio launches and get more support guides.</p>
         <form onSubmit={handleSubmit} className="mt-2">
           <div className="flex items-center mt-1">
             <input
