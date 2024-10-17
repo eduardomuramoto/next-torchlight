@@ -78,7 +78,7 @@ export default function EnquirySection() {
   };
 
   return (
-    <section className="w-full bg-lightBackground flex gap-20 p-16 px-20">
+    <section className="w-full bg-lightBackground flex gap-20 p-16 lg:px-20">
       <div className="w-full">
         <h3 className="font-teko text-6xl uppercase font-semibold pb-6 text-background">Have a Question?</h3>
         <p className="font-teko text-6xl uppercase font-semibold pb-6 text-background">We are here to help.</p>

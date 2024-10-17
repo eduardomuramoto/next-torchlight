@@ -6,8 +6,8 @@ export default function JumboHeader({title, subTitle, paragraphs, imgUrl, style=
   const titleColor = style==="orange"? "text-foreground": "text-background";
   const marginTop = alignTop? "" :"mt-auto"; 
   return (
-    <div className={bgColor + " w-full flex gap-20 p-16 px-36"}>
-      <div className="w-1/2 h-1/3">
+    <div className={bgColor + " w-full flex flex-wrap lg:flex-nowrap gap-20 p-16 lg:px-36"}>
+      <div className="w-full lg:w-1/2 h-1/3">
       <Image
                   src={imgUrl?imgUrl:photo}
                   alt="Get Support photo"
@@ -15,7 +15,7 @@ export default function JumboHeader({title, subTitle, paragraphs, imgUrl, style=
                   width={1200}
                 />
       </div>
-      <div className={marginTop + " w-1/2"}>
+      <div className={marginTop + " w-full lg:w-1/2"}>
       <p className="text-background text-2xl pb-6 font-semibold">{subTitle}</p>
       <h1 className={titleColor +" font-teko text-6xl uppercase font-semibold pb-6"}>{title}</h1>
       {paragraphs? paragraphs.map((paragraph) => {
