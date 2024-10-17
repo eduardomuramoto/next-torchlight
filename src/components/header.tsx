@@ -76,7 +76,7 @@ export default function Header() {
         </ul>
       </div>
       <div className="flex justify-between items-center bg-white py-2 p-4 lg:px-20 text-center text-surface/75 text-white/75 lg:text-left">
-        <Link href="/">
+        <Link href="/" className="w-[90px] lg:w-fit">
           <Image
             src={logo}
             alt="Logo Torchlight Foundation"
