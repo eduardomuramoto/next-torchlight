@@ -23,6 +23,6 @@
       "@images/*": ["./public/images/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/get-support/courses/[slug]/page.tsx.backup"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/get-support/courses/[slug]/page.tsx.backup", "src/components/Buttons/outlineButton.tsx.bckp"],
   "exclude": ["node_modules"]
 }

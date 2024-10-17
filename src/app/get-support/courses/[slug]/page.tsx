@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 // import CourseCard from "../Cards/courseCard";
 
 const client = new ApolloClient({
-  uri: `${process.env.CMS_GRAPHQL}`,
+  uri: `${process.env.NEXT_PUBLIC_CMS_GRAPHQL}`,
   cache: new InMemoryCache(),
 });
 
