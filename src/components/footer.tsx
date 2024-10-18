@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NewsletterComponent from "./ ContactSection/newsletter";
 
 export default function Footer() {
@@ -12,7 +13,7 @@ export default function Footer() {
               Follow Us
         </h6>
         <div className="flex justify-center">
-          <a href="#!" className="me-6 [&>svg]:h-6 [&>svg]:w-6">
+          <a href="https://www.facebook.com/profile.php?id=61551732609381&sk=about" target="_blank" className="me-6 [&>svg]:h-6 [&>svg]:w-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -21,7 +22,7 @@ export default function Footer() {
                 d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
             </svg>
           </a>
-          <a href="#!" className="me-6 [&>svg]:h-6 [&>svg]:w-6">
+          <a href="https://www.instagram.com/torchlightfoundation/" target="_blank" className="me-6 [&>svg]:h-6 [&>svg]:w-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -30,7 +31,7 @@ export default function Footer() {
                 d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
             </svg>
           </a>
-          <a href="#!" className="me-6 [&>svg]:h-6 [&>svg]:w-6">
+          <a href="https://www.linkedin.com/in/torchlight-foundation-8584b6314/" target="_blank" className="me-6 [&>svg]:h-6 [&>svg]:w-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -39,7 +40,7 @@ export default function Footer() {
                 d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
             </svg>
           </a>
-          <a href="#!" className="[&>svg]:h-6 [&>svg]:w-6">
+          <a href="https://www.tiktok.com/@torchlightfoundation" target="_blank" className="[&>svg]:h-6 [&>svg]:w-6">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
              <path d="M27.6669 9.7C26.5279 8.39921 25.9001 6.729 25.9003 5H20.7503V25.6667C20.7114 26.7853 20.2395 27.8451 19.4341 28.6225C18.6288 29.3999 17.5529 29.834 16.4336 29.8333C14.0669 29.8333 12.1003 27.9 12.1003 25.5C12.1003 22.6333 14.8669 20.4833 17.7169 21.3667V16.1C11.9669 15.3333 6.93359 19.8 6.93359 25.5C6.93359 31.05 11.5336 35 16.4169 35C21.6503 35 25.9003 30.75 25.9003 25.5V15.0167C27.9886 16.5164 30.4959 17.3211 33.0669 17.3167V12.1667C33.0669 12.1667 29.9336 12.3167 27.6669 9.7Z" fill="currentColor"/>
           </svg>
@@ -53,28 +54,39 @@ export default function Footer() {
         <div className="grid-1 grid gap-8 grid-cols-2 lg:grid-cols-4">
           
           <div>
+          <Link href="/about-us">
             <h6
               className="mb-4 flex text-xl font-teko font-semibold uppercase justify-start">
              About Us
             </h6>
+            </Link>
+            <Link href="/our-projects">
             <h6
               className="mb-4 flex text-xl font-teko font-semibold uppercase justify-start">
              Our Projects
             </h6>
+            </Link>
+            <Link href="/get-involved">
             <h6
               className="mb-4 flex text-xl font-teko font-semibold uppercase justify-start">
              Get Involved
             </h6>
-            <h6
-              className="mb-4 flex text-xl font-teko font-semibold uppercase justify-start">
-             Donate
-            </h6>
+            </Link>
+            <a href="https://www.torchlight.org.au/donation" target="_blank">
+              <h6
+                className="mb-4 flex text-xl font-teko font-semibold uppercase justify-start">
+              Donate
+              </h6>
+            </a>
           </div>
           <div>
+    
+          <Link href="/get-support">
             <h6
               className="mb-4 flex text-xl font-teko font-semibold uppercase justify-start">
               Get Support
             </h6>
+            </Link>
             <p className="mb-4 flex justify-start">
               <a href="#!">Courses</a>
             </p>
@@ -90,6 +102,7 @@ export default function Footer() {
               className="mb-4 flex text-xl font-teko font-semibold uppercase justify-start">
               Contact Us
             </h6>
+            <a href="mailto:hq@torchlight.org.au">
             <p className="mb-4 flex items-center justify-start">
               <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
                 <svg
@@ -104,6 +117,8 @@ export default function Footer() {
               </span>
               hq@torchlight.org.au
             </p>
+            </a>
+            <a href="tel:+1800363228">
             <p className="mb-4 flex items-center justify-start">
               <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
                 <svg
@@ -118,6 +133,8 @@ export default function Footer() {
               </span>
               1800 END ABUSE
             </p>
+            </a>
+            <a href="tel:+1800363228">
             <p className="flex items-center justify-start">
               <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
                 <svg
@@ -132,6 +149,7 @@ export default function Footer() {
               </span>
               1800 363 228
             </p>
+            </a>
           </div>
           <div className="col-span-2 md:col-auto" >
             <p className="text-start">
@@ -145,8 +163,10 @@ export default function Footer() {
         <span>© 2024 
         <a href="https://torchlight.foundation/"> Torchlight Foundation </a>
          - All Rights Reserved</span>
-        <a href="#">Privacy</a>
-        <a href="#">Terms & Conditions</a>
+         <Link href="/privacy">
+        Privacy
+         </Link>
+         <Link href="/terms-and-conditions">Terms & Conditions</Link>
         
       </div>
     </footer>

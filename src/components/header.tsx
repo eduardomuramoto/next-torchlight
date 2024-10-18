@@ -61,18 +61,25 @@ export default function Header() {
     <header className="bg-foreground shadow-md text-center text-surface/75 text-white/75 lg:text-left sticky top-0 z-20">
       <div className="px-4 lg:px-20">
         <ul className="flex justify-between">
+            <a href="tel:+000">
           <li className="flex items-center py-1">
+
             <PhoneOutlineComponent />
             000
           </li>
+            </a>
+            <a href="tel:+1800363228">
           <li className="flex items-center py-1">
             <PhoneComponent />
             1800 End Abuse
           </li>
+            </a>
+            <a href="tel:+1800363228">
           <li className="flex items-center py-1">
             <PhoneComponent />
             1800 363 228
           </li>
+            </a>
         </ul>
       </div>
       <div className="flex justify-between items-center bg-white py-2 p-4 lg:px-20 text-center text-surface/75 text-white/75 lg:text-left">
@@ -107,7 +114,9 @@ export default function Header() {
             ))}
           </ul>
         </nav>
+        <a href="https://www.torchlight.org.au/donation" target="_blank">
           <DonateButton label="Donate Now" beforeIcon="yes" />
+        </a>
           {/* Burger Menu Button */}
         <button
           className="lg:hidden block focus:outline-none z-10 mt-5"
