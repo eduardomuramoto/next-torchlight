@@ -6,7 +6,7 @@ export default function JumboHeader({title, subTitle, paragraphs, imgUrl, style=
   const titleColor = style==="orange"? "text-foreground": "text-background";
   const marginTop = alignTop? "" :"mt-auto"; 
   return (
-    <div className={bgColor + " w-full flex flex-wrap lg:flex-nowrap gap-20 p-16 lg:px-36"}>
+    <div className={bgColor + " w-full flex flex-wrap lg:flex-nowrap gap-10 lg:gap-20 p-16 lg:px-36"}>
       <div className="w-full lg:w-1/2 h-1/3">
       <Image
                   src={imgUrl?imgUrl:photo}
@@ -22,11 +22,7 @@ export default function JumboHeader({title, subTitle, paragraphs, imgUrl, style=
         return(<p className="text-gray-800 pb-4" key={paragraph}>{paragraph}</p>)
       })
       :
-        <>
-      <p className="text-gray-800 pb-4">At Torchlight Foundation, our mission is to provide education and resources to support mental health and wellness in our community.</p>
-      <p className="text-gray-800 pb-4">We offer a variety of programmes and services to support mental health, including counselling, support groups, and educational workshops.</p>
-      <p className="text-gray-800 pb-4">Over the past year, we have helped over 1,000 individuals in our community improve their mental health and well-being.</p>
-      </>
+        <></>
       }
       </div>
     </div>

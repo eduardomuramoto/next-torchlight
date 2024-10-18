@@ -8,17 +8,17 @@ export default function OverlapSection({title, subTitle, paragraphs, imgUrl, sty
   const reverseCols = reverse? "flex-row-reverse ":"";
 
   return (
-    <div className={ reverseCols + "bg-white w-full flex gap-20 p-16 px-36 items-end"}>
-      <div className={(reverse? "pr-8":"pl-8")+" pb-8 w-1/2 h-1/3 z-10"}>
+    <div className={ reverseCols + "bg-white w-full flex-wrap lg:flex-nowrap flex lg:gap-20 p-16 lg:px-36 items-end"}>
+      <div className={(reverse? "lg:pr-8":"lg:pl-8")+" lg:pb-8 w-full lg:w-1/2 h-1/3 z-10"}>
       <Image
                   src={imgUrl?imgUrl:photo}
                   alt="Get Support photo"
-                  className="lazyload rounded-lg overflow-hidden"
+                  className="lazyload rounded-t-lg lg:rounded-lg overflow-hidden"
                   width={1200}
                 />
       </div>
-      <div className={ bgColor + " w-[80%] absolute rounded-lg"}>
-        <div className={(reverse? "w-1/2 mr":"ml")+"-[50%] p-8"}>
+      <div className={ bgColor + "  w-full lg:w-[80%] rounded-b-lg lg:absolute lg:rounded-lg"}>
+        <div className={(reverse? "lg:w-1/2 lg:mr":"lg:ml")+"-[50%] p-8"}>
           <p className="text-background text-2xl pb-6 font-semibold">{subTitle}</p>
           <h1 className={titleColor +" font-teko text-4xl uppercase font-semibold pb-6"}>{title}</h1>
           {paragraphs? paragraphs.map((paragraph) => {
