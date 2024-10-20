@@ -88,13 +88,13 @@ export default function Footer() {
             </h6>
             </Link>
             <p className="mb-4 flex justify-start">
-              <a href="#!">Courses</a>
+              <a href="/get-support#courses">Courses</a>
             </p>
             <p className="mb-4 flex justify-start">
-              <a href="#!">Services</a>
+              <a href="/get-support#services">Services</a>
             </p>
             <p className="mb-4 flex justify-start">
-              <a href="#!">Enquiry</a>
+              <a href="/get-support#enquiry">Enquiry</a>
             </p>
           </div>
           <div>

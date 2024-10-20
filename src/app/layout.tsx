@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="en">
+      <html lang="en" className="scroll-pt-[125px] lg:scroll-pt-[144px]">
         <body
           className={`${roboto.className} ${teko.variable} antialiased`}
           >
