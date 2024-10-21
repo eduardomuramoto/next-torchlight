@@ -21,8 +21,13 @@ await client
                     Location
                     Price
                     slug
-                    durationValue
-                    durationUnit
+                      courseDuration{
+                      __typename
+                      ...on ComponentCourseComponentsDuration{
+                        unit
+                        value
+                      }
+                    }
                   }
                 }
               }
@@ -51,7 +56,7 @@ export default function CoursesSection() {
                         location={course.attributes.Location}
                         price={course.attributes.Price}
                         slug={course.attributes.slug}
-                        duration={{value:course.attributes.durationValue,unit:course.attributes.durationUnit}}
+                        duration={course.attributes.courseDuration}
                          />)
                     })}
     </div>

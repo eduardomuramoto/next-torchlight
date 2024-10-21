@@ -18,7 +18,21 @@ const COURSE_QUERY = gql`query Course($slug: String!) {
           courseCode
           Price
           Location
-         facilitators{
+          courseDuration{
+                      ...on ComponentCourseComponentsDuration{
+                        unit
+                        value
+                      }
+                    }
+          courseObjectives{
+                      __typename
+                      ...on ComponentCourseComponentsCourseObjective{
+                        Icon
+                        Objective
+                      }
+            
+                    }
+          facilitators{
             data{
               attributes{
                 Name
