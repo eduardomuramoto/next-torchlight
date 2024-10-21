@@ -8,7 +8,7 @@ export default function TermsAndConditionsPage() {
   return (
     <div className="">
       <main className="flex flex-col row-start-2 items-center sm:items-start bg-white px-16 py-10">
-        <h1>Terms & Conditions</h1>
+        <h1 className="font-teko text-6xl uppercase font-semibold pb-2 text-background">Terms & Conditions</h1>
        <p>
        Last Updated: November 2023
 

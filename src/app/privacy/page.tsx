@@ -9,13 +9,12 @@ export default function PrivacyPage() {
   return (
     <div className="">
       <main className="flex flex-col row-start-2 items-center sm:items-start bg-white px-16 py-10">
-        <h1>Privacy Policy</h1>
-        <p>
-        Last Updated: November 2023</p>
+        <h1 className="font-teko text-6xl uppercase font-semibold pb-2 text-background" >Privacy Policy</h1>
+        <p>Last Updated: November 2023</p>
  
-<p>
-Torchlight Foundation ("we," "our," or "us") is committed to protecting the privacy of individuals who visit our website. This Privacy Policy outlines the types of personal information we collect, how it is used, and the choices you have regarding your information.
-</p>
+        <p>
+        Torchlight Foundation ("we," "our," or "us") is committed to protecting the privacy of individuals who visit our website. This Privacy Policy outlines the types of personal information we collect, how it is used, and the choices you have regarding your information.
+        </p>
  
 <h6>
 Information We Collect:
