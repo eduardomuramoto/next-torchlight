@@ -17,7 +17,12 @@ await client
                 data{
                   attributes{
                     CourseName
+                    courseCode
+                    Location
+                    Price
                     slug
+                    durationValue
+                    durationUnit
                   }
                 }
               }
@@ -28,7 +33,7 @@ await client
     }`,
   })
   .then((result) => { coursesArr = result.data.getSupport.data.attributes.Courses.courses.data })
-  // .then((result) => { console.log(result.data.getSupport.data.attributes.Courses.courses) });
+  // .then((result) => { console.log(result.errors) });
 
   // console.log(coursesArr)
 // 
@@ -38,14 +43,15 @@ export default function CoursesSection() {
     <h2 className="font-teko text-5xl uppercase font-semibold pb-6 text-background">Our Courses</h2>
     <div className="flex flex-wrap justify-between gap-10">
     {coursesArr?.map((course)=>{
-      console.log(course);
                       return( <CourseCard 
                         key={course.attributes.CourseName}
-                        courseColor="fill-wellbeing1" 
+                        courseColor={"fill-" + course.attributes.courseCode.toLowerCase().replace("_0","") } 
                         title={course.attributes.CourseName}
-                        category="Wellbeing"
-                        price="55"
+                        category={course.attributes.courseCode.replace("_","-")}
+                        location={course.attributes.Location}
+                        price={course.attributes.Price}
                         slug={course.attributes.slug}
+                        duration={{value:course.attributes.durationValue,unit:course.attributes.durationUnit}}
                          />)
                     })}
     </div>

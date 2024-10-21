@@ -9,12 +9,31 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const COURSE_QUERY = gql`query Courses {
-    courses(filters: {slug: {eq:"skills4life"}}) {
+const COURSE_QUERY = gql`query Course($slug: String!) {
+    courses(filters: {slug: {eq:$slug}}) {
       data {
         id
         attributes {
           CourseName
+          courseCode
+          Price
+          Location
+         facilitators{
+            data{
+              attributes{
+                Name
+                Description
+              }
+            }
+            }
+          courses{
+           data{
+              attributes{
+                    CourseName
+                    slug
+              }
+            }
+          }
         }
       }
     }
@@ -37,7 +56,7 @@ export default function CoursePage() {
         }
       })
       .then((result) => {
-        console.log("Result",result)
+        // console.log("Result",result)
         setCourse(result.data.courses.data[0].attributes)
         setLoading(false)
       })
@@ -45,13 +64,14 @@ export default function CoursePage() {
     }, [params.slug,course])
    
     if (isLoading) return <p>Loading...</p>
-    // if (!course) return <p>No course data</p>
+    if (!course) return <p>No course data</p>
     
   return (
     <div className="">
       <main className="flex flex-col row-start-2 items-center sm:items-start">
         <div className="bg-lightBackground w-full p-10 px-20 flex flex-col gap-8 row-start-2">
-        <h1 className="text-2xl pb-6 font-semibold text-background" >Skills4life: Domestic Violence Prevention & Awareness Training Course</h1>
+        <h1 className="text-2xl pb-6 font-semibold text-background" >{course.CourseName}</h1>
+        {/* <h1 className="text-2xl pb-6 font-semibold text-background" >Skills4life: Domestic Violence Prevention & Awareness Training Course</h1> */}
         <h2 className="font-teko text-5xl uppercase font-semibold pb-6 text-background">What You’ll learn</h2>
         </div>
         <div className="bg-extraLightForeground w-full p-10 px-20 flex flex-col gap-8 row-start-2">

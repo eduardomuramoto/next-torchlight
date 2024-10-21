@@ -16,7 +16,7 @@ export default function ServiceCard({title, description}:ServiceCardProps) {
      
       <p className="text-center text-gray-800 font-normal pb-2">{description}</p>
       <div className="flex w-full justify-end">
-      <BorderlessButton label="View Course" afterIcon="yes"/>
+      <BorderlessButton label="View Service" afterIcon="yes"/>
       </div>
     </div>
   )}
