@@ -19,7 +19,7 @@ export default function OverlapSection({title, subTitle, paragraphs, imgUrl, sty
       </div>
       <div className={ bgColor + "  w-full lg:w-[80%] rounded-b-lg lg:absolute lg:rounded-lg"}>
         <div className={(reverse? "lg:w-1/2 lg:mr":"lg:ml")+"-[50%] p-8"}>
-          <p className="text-background text-2xl pb-6 font-semibold">{subTitle}</p>
+          {/* <p className="text-background text-2xl pb-6 font-semibold">{subTitle}</p> */}
           <h1 className={titleColor +" font-teko text-4xl uppercase font-semibold pb-6"}>{title}</h1>
           {paragraphs? paragraphs.map((paragraph) => {
             return(<p className="text-gray-800 pb-4" key={paragraph}>{paragraph}</p>)
@@ -31,7 +31,9 @@ export default function OverlapSection({title, subTitle, paragraphs, imgUrl, sty
           <p className="text-gray-800 pb-4">Over the past year, we have helped over 1,000 individuals in our community improve their mental health and well-being.</p>
           </>
           }
+          <a href="https://www.torchlight.org.au/donation" target="_blank">
           <OrangeButton label="Donate"/>
+          </a>
         </div>
       </div>
     </div>

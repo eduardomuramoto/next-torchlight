@@ -1,6 +1,7 @@
 import Image from "next/image"
 import photo from "@/../../public/images/Lisa.png"
 import OrangeButton from "../Buttons/orangeButton"
+import Link from "next/link"
 
 export default function HomeJumboHeader() {
   return (
@@ -10,7 +11,9 @@ export default function HomeJumboHeader() {
       <p className="font-teko text-6xl text-background uppercase font-semibold pb-6">We’re with you<br/>every step of the way…</p>
       <p className="text-gray-800 pb-4">We are a nonprofit organization providing support to victims of domestic violence. We are also dedicated to empowering communities through  education, services and resources for those who may be experiencing a  family crisis.</p>
       
-      <OrangeButton label="Label"/>
+      <Link href="/about-us">
+      <OrangeButton label="Find Out More" afterIcon="yes"/>
+      </Link>
       </div>
       <div>
       <Image
