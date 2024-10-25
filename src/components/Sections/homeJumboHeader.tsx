@@ -12,7 +12,7 @@ export default function HomeJumboHeader() {
       <p className="text-gray-800 pb-4">We are a nonprofit organization providing support to victims of domestic violence. We are also dedicated to empowering communities through  education, services and resources for those who may be experiencing a  family crisis.</p>
       
       <Link href="/about-us">
-      <OrangeButton label="Find Out More" afterIcon="yes"/>
+      <OrangeButton label="About Us" afterIcon="yes" url="/about-us"/>
       </Link>
       </div>
       <div>

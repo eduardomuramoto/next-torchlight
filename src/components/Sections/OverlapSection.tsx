@@ -2,14 +2,15 @@ import Image, { StaticImageData } from "next/image"
 import photo from "@images/donate.webp"
 import OrangeButton from "../Buttons/orangeButton";
 
-export default function OverlapSection({title, subTitle, paragraphs, imgUrl, style="orange", reverse=false }:{title:string, subTitle:string, paragraphs:string[], imgUrl?:StaticImageData, style?:string, reverse?:boolean}) {
+export default function OverlapSection({title, subTitle, paragraphs, imgUrl, style="orange", reverse=false, smallPicture=false }:{title:string, subTitle:string, paragraphs:string[], imgUrl?:StaticImageData, style?:string, reverse?:boolean, smallPicture?:boolean}) {
   const bgColor = style==="orange"? "bg-lightForeground": "bg-redBackground";
   const titleColor = style==="orange"? "text-foreground": "text-background";
   const reverseCols = reverse? "flex-row-reverse ":"";
 
+
   return (
     <div className={ reverseCols + "bg-white w-full flex-wrap lg:flex-nowrap flex lg:gap-20 p-16 lg:px-36 items-end"}>
-      <div className={(reverse? "lg:pr-8":"lg:pl-8")+" lg:pb-8 w-full lg:w-1/2 h-1/3 z-10"}>
+      <div className={(reverse? "lg:pr-8":"lg:pl-8")+" lg:pb-8 w-full "+(smallPicture?"lg:w-1/3":"lg:w-1/2")+" h-1/3 z-10"}>
       <Image
                   src={imgUrl?imgUrl:photo}
                   alt="Get Support photo"

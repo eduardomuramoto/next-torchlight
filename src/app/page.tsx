@@ -3,7 +3,10 @@ import CourseCard from "@/components/Cards/courseCard";
 import ServiceCard from "@/components/Cards/serviceCard";
 import CoursesSection from "@/components/Sections/CourseSection";
 import HomeJumboHeader from "@/components/Sections/homeJumboHeader";
+import JusticeRadioHeader from "@/components/Sections/justiceRadioSection";
+import OverlapSection from "@/components/Sections/OverlapSection";
 import SubNavBar from "@/components/Sections/pageSubNavBar";
+import volunteerPhoto from "@images/Volunteer.jpg"
 
 
 
@@ -13,41 +16,21 @@ export default function Home() {
     <div className="">
       <main className="flex flex-col row-start-2 items-center sm:items-start">
         <HomeJumboHeader/>
-        <SubNavBar />
-        <CoursesSection />
-        {/* <div className="bg-lightBackground w-full p-10 px-20 flex flex-col gap-8 row-start-2">
-          <h2 className="font-teko text-5xl uppercase font-semibold pb-6 text-background">Our Courses</h2>
-          <div className="flex flex-wrap justify-between gap-10">
-            <CourseCard 
-            courseColor="fill-wellbeing1" 
-            title="Make Your Own Strengths Card Workshop"
-            category="Wellbeing"
-            price="55"
-             />
-            <CourseCard 
-            courseColor="fill-wellbeing2" 
-            title="Skills4life:Domestic Violence Prevention & Awareness Training Course"
-            category="Wellbeing"
-            price="55"
-             />
-            <CourseCard 
-            courseColor="fill-wellbeing3" 
-            title="Overcoming Obstacles: A Comprehensive Approach to Healing and Resilience"
-            category="Wellbeing"
-            price="55"
-             />
-          </div>
-        </div> */}
+        <OverlapSection
+          reverse={true}
+          style="red"
+          smallPicture={true}
+          subTitle="Be a part of the solution!" 
+          title="Become A Volunteer" 
+          imgUrl={volunteerPhoto}
+          paragraphs={[
+            " Join us in making a difference in the lives of survivors of domestic violence. "
+                      ]} 
+        />
+        <JusticeRadioHeader/>
+
         
-        <div className="bg-extraLightForeground w-full p-10 px-20 flex flex-col gap-8 row-start-2">
-          <h2 className="font-teko text-5xl uppercase font-semibold pb-6 text-background">Our Services</h2>
-          <div className="flex flex-wrap justify-between gap-10">
-            <ServiceCard title="Counselling" description="Our experienced  professionals offer guidance and support for personal growth and  healing."/>
-            <ServiceCard title="Advocacy" description="We support and advocate for women affected by domestic violence through various essential services."/>
-            <ServiceCard title="Legal Consultation" description="We offer professional legal consultation services to guide you through your legal matters with expertise and care."/>
-          </div>
-        </div>
-        <EnquirySection/>
+    
       </main>
       
     </div>

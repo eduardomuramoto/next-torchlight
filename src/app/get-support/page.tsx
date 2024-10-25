@@ -21,7 +21,11 @@ export default function GetSupportPage() {
           "Over the past year, we have helped over 1,000 individuals in our community improve their mental health and well-being."
         ]}
         />
-        <SubNavBar />
+        <SubNavBar Links={[
+          {url:"#courses",label:"Courses"},
+          {url:"#services",label:"Services"},
+          {url:"#enquiry",label:"Enquiry"},
+        ]}/>
         <CoursesSection />
         
         <div className="bg-extraLightForeground w-full p-10 px-20 flex flex-col gap-8 row-start-2" id="services">
