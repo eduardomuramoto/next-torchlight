@@ -1,4 +1,5 @@
 import EnquirySection from "@/components/ ContactSection/enquiry";
+import IconsSection from "@/components/Sections/iconsSection";
 import JumboHeader from "@/components/Sections/pageJumboHeader";
 import SubNavBar from "@/components/Sections/pageSubNavBar";
 import jumboPhoto from "@images/About_Us.webp"
@@ -25,6 +26,12 @@ export default function GetSupportPage() {
           {url:"#our-mission",label:"Our Mission"},
           {url:"#our-vision",label:"Our Vision"},
         ]}/>
+        <IconsSection
+          idName="what-we-do"
+          title="What We Do"
+          blueTitle={true}
+          paragraphs={["we are dedicated to inspiring and empowering families and communities. By fostering advocacy and promoting positive changes in societal attitudes, culture, and policies, we strive to break the cycle of abuse and create a future where everyone can thrive in a safe and supportive environment."]}
+        />
         <JumboHeader 
           idName="our-mission"
           bgWhite={true}

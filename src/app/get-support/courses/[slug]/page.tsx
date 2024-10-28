@@ -1,6 +1,6 @@
 "use client"
 import CourseBookingCard from "@/components/Cards/courseBookingCard";
-import ObjectiveCard from "@/components/Cards/objectiveCard";
+import IconCard from "@/components/Cards/iconCard";
 import FacilitatorsSection from "@/components/Sections/facilitatorsSection";
 import OtherCoursesSection from "@/components/Sections/otherCoursesSection";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
@@ -128,7 +128,7 @@ export default function CoursePage() {
               <h2 className="font-teko text-5xl uppercase font-semibold pb-6 text-background">What You’ll learn</h2>
               <div className="flex flex-wrap justify-start gap-10">
                 {course.courseObjectives.map((objective)=>{ 
-                  return <ObjectiveCard 
+                  return <IconCard 
                   icon={objective.Icon} 
                   objective={objective.Objective}/>
                 })}

@@ -43,7 +43,6 @@ export default function Header() {
           `,
         });
         setMenuItems(result.data.menusMenu.data.attributes.items.data);
-        console.log(menuItems);
       } catch (error) {
         console.error("Error fetching menu:", error);
       }
