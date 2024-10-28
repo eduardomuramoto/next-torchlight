@@ -26,6 +26,7 @@ export default function GetSupportPage() {
           {url:"#our-vision",label:"Our Vision"},
         ]}/>
         <JumboHeader 
+          idName="our-mission"
           bgWhite={true}
           blueTitle={true}
           alignTop={false}
@@ -36,6 +37,7 @@ export default function GetSupportPage() {
           ]}
         />
         <JumboHeader 
+          idName="our-vision"
           blueTitle={true}
           alignTop={false}
           reverse={true}

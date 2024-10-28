@@ -1,13 +1,14 @@
 import Image, { StaticImageData } from "next/image"
 import photo from "@/../../public/images/Get_Support.jpg"
 
-export default function JumboHeader({title, subTitle, paragraphs, imgUrl, style="orange", alignTop=true,reverse=false,blueTitle=false ,bgWhite=false }:
-  {title:string, subTitle?:string, paragraphs:string[], imgUrl?:StaticImageData, style?:string, alignTop?:boolean,reverse?:boolean,blueTitle?:boolean,bgWhite?:boolean}) {
+export default function JumboHeader({title, subTitle, paragraphs, imgUrl, style="orange",idName, alignTop=true,reverse=false,blueTitle=false ,bgWhite=false }:
+  {title:string, subTitle?:string, paragraphs:string[], imgUrl?:StaticImageData, style?:string, idName?:string, alignTop?:boolean,reverse?:boolean,blueTitle?:boolean,bgWhite?:boolean}) {
   const bgColor = style==="orange"? ( bgWhite?"bg-white":"bg-lightForeground"): "bg-redBackground";
   const titleColor = style==="orange"?( blueTitle?"text-background":"text-foreground"): "text-background";
   const marginTop = alignTop? "" :"mt-auto"; 
   return (
-    <div className={(reverse?"flex-row-reverse ":"")+ bgColor + " w-full flex flex-wrap lg:flex-nowrap gap-10 lg:gap-20 p-16 lg:px-36"}>
+    <div id={idName?idName:""}
+    className={(reverse?"flex-row-reverse ":"")+ bgColor + " w-full flex flex-wrap lg:flex-nowrap gap-10 lg:gap-20 p-16 lg:px-36"}>
       <div className="w-full lg:w-1/2 h-1/3">
       <Image
                   src={imgUrl?imgUrl:photo}
