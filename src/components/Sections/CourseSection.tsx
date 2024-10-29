@@ -50,6 +50,7 @@ export default function CoursesSection() {
     {coursesArr?.map((course)=>{
                       return( <CourseCard 
                         key={course.attributes.CourseName}
+                        // courseColor={"fill-background" } 
                         courseColor={"fill-" + course.attributes.courseCode.toLowerCase().replace("_0","") } 
                         title={course.attributes.CourseName}
                         category={course.attributes.courseCode.replace("_","-")}

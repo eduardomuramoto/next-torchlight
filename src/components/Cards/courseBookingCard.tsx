@@ -11,10 +11,10 @@ type CourseCardProps = {
   price: string,
   slug?: string,
   location: string[], 
-  duration: any, 
+  duration: string, 
 }
 
-export default function CourseBookingCard({courseColor, title, category, price,slug,location,duration}:CourseCardProps) {
+export default function CourseBookingCard({courseColor, category, price,slug,location,duration}:CourseCardProps) {
   const router = useRouter();
   const [formData, setFormData] = useState({
     code: category.toString(), // The hidden input field
@@ -51,11 +51,11 @@ export default function CourseBookingCard({courseColor, title, category, price,s
       <CornerComponent color={courseColor} className="absolute top-0 right-0 w-5/12 h-auto"/>
       <form onSubmit={handleSubmit} className="">
 
-      <div className="w-11/12">
+      <div className="w-11/12 pb-2">
       <h4 className="text-xl">Book Course</h4>
 
 
-      <p className="pt-2 text-xl font-medium">{"$" + price + "/Guest"}</p>
+      <p className="pt-2 text-xl font-medium pb-2">{"$" + price + "/Guest"}</p>
       <p className="flex text-gray-600 text-sm items-center pr-2"><span className="pr-1"><ClockComponent/></span>{duration.value +" "+ duration.unit + (duration.value>1?"s":"")}</p>
 
       </div>
@@ -93,11 +93,11 @@ export default function CourseBookingCard({courseColor, title, category, price,s
         </label>
       </div>
       {/* Hidden input */}
-      <input
+      {/* <input
         type="hidden"
         name="code"
         value={formData.code}
-      />
+      /> */}
 
       </div>
       <div className="flex w-full justify-end mt-8">

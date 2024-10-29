@@ -1,14 +1,7 @@
 "use client"
 import BlueButton from "@/components/Buttons/blueButton";
-import CourseBookingCard from "@/components/Cards/courseBookingCard";
-import IconCard from "@/components/Cards/iconCard";
-import ClockComponent from "@/components/Icons/clock";
-import ComputerComponent from "@/components/Icons/computer";
-import InPersonComponent from "@/components/Icons/inPerson";
-import FacilitatorsSection from "@/components/Sections/facilitatorsSection";
-import OtherCoursesSection from "@/components/Sections/otherCoursesSection";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import { useParams, useSearchParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import {  useEffect, useState } from "react";
 // import CourseCard from "../Cards/courseCard";
 
@@ -19,46 +12,25 @@ const client = new ApolloClient({
 
 // Query
 const COURSE_QUERY = gql`query Course($slug: String!) {
-    courses(filters: {slug: {eq:$slug}}) {
-      data {
-        id
-        attributes {
-          CourseName
-          courseCode
-          Price
-          Location
-          slug
-          courseDuration{
-                      ...on ComponentCourseComponentsDuration{
-                        unit
-                        value
-                      }
-                    }
-        
-        }
-      }
+    services(filters: {slug: {eq:$slug}}) {
+       data{
+            attributes{
+              Name
+              Price
+              Description
+              ServiceIcon
+              slug
+            }
+          }
     }
 }`;
 
-interface Course {
-  CourseName: string,
-  courseCode: string,
+interface Service {
+  Name: string,
   Price: string,
   slug:string,
-  Location: string[],
-  courseDuration: any[],
-  courseObjectives: any[],
-  facilitators: {
-    data: [{
-      attributes: {
-        Name:string,
-        Description:string,
-      }
-    }],
-  },
-  courses:{
-    data: any[],
-  }
+  serviceIcon:string,
+  Description:string,
  }
 
  // Define the shape of the form data
@@ -66,11 +38,9 @@ interface FormData {
   name: string;
   email: string;
   phone: string;
-  quantity: number;
-  groupClasses: boolean;
-  coursePrice: number;
-  courseName: string;
-  courseCode: string;
+  message: string;
+  servicePrice: number;
+  serviceName: string;
 }
 
 // Define the shape of the status message
@@ -81,21 +51,17 @@ interface StatusMessage {
  
 
 
-export default function BookingCoursePage() {
+export default function BookingServicePage() {
   const params = useParams();
-  const searchParams = useSearchParams();
-  const location = (searchParams.get("location"));
-  const [course, setCourse] = useState<Course>()
+  const [service, setService] = useState<Service>()
   const [isLoading, setLoading] = useState(false)
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
-    quantity: 1,
-    groupClasses: false,
-    courseName: "",
-    courseCode: "",
-    coursePrice: 0,
+    message: "",
+    serviceName: "",
+    servicePrice: 0,
   });
 
   const [statusMessage, setStatusMessage] = useState<StatusMessage>({
@@ -113,23 +79,21 @@ export default function BookingCoursePage() {
       })
       .then((result) => {
         // console.log("Result",result)
-        setCourse(result.data.courses.data[0].attributes)
+        setService(result.data.services.data[0].attributes)
         setFormData({
           name: "",
           email: "",
           phone: "",
-          quantity: 1,
-          groupClasses: false,
-          courseName: result.data.courses.data[0].attributes.CourseName,
-          courseCode: result.data.courses.data[0].attributes.courseCode,
-          coursePrice: parseInt(result.data.courses.data[0].attributes.Price),
+          message: "",
+          serviceName: result.data.services.data[0].attributes.Name,
+          servicePrice: parseInt(result.data.services.data[0].attributes.Price),
         });
         setLoading(false)
       })
-    }, [params.slug,course])
+    }, [params.slug,service])
    
     if (isLoading) return <p>Loading...</p>
-    if (!course) return <p>No course data</p>
+    if (!service) return <p>No service data</p>
 
     
   
@@ -147,7 +111,7 @@ export default function BookingCoursePage() {
       setStatusMessage({ message: "Sending Email...", type: "" }); // Reset message before submission
   
       try {
-        const response = await fetch("/api/bookCourseEmail", {
+        const response = await fetch("/api/bookServiceEmail", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -167,11 +131,9 @@ export default function BookingCoursePage() {
           name: "",
           email: "",
           phone: "",
-          quantity: 1,
-          groupClasses: false,
-          courseName: course.CourseName,
-          courseCode: course.courseCode,
-          coursePrice: parseInt(course.Price),
+          message: "",
+          serviceName: service.Name,
+          servicePrice: parseInt(service.Price),
         }); // Clear form fields
       } catch (error) {
         console.error("Error sending email:", error);
@@ -188,32 +150,18 @@ export default function BookingCoursePage() {
         <div className="relative w-full p-10 px-20 bg-white">
           <form onSubmit={handleSubmit} className="grid grid-cols-3">
           <div className="relative overflow-hidden flex flex-col p-6 bg-white border-2 border-background text-background font-semibold rounded-md">
-              <h2 className="text-2xl pb-6 font-semibold text-background uppercase font-teko" >Your Course</h2>
-              <h1 className="text-4xl font-semibold text-foreground uppercase font-teko" >{course.CourseName}</h1>
-              <p className="pb-6">{"#"+course.courseCode.replace("_","-")}</p>
+              <h2 className="text-2xl pb-6 font-semibold text-background uppercase font-teko" >Your Service</h2>
+              <h1 className="text-4xl font-semibold text-foreground uppercase font-teko" >{service.Name}</h1>
 
-              <p className="flex text-gray-600 text-sm items-center pr-2"><span className="pr-1"><ClockComponent/></span>{course.courseDuration.value +" "+ course.courseDuration.unit + (course.courseDuration.value>1?"s":"")}</p>
+              <p className="text-start text-gray-800 font-normal pb-2">{service.Description}</p>
 
-              {location?.includes("in-person")? (<p className="flex text-gray-600 text-sm items-center pr-2"><span className="pr-1"><InPersonComponent/></span> In-Person</p>):""}
-              {location?.includes("online")? (<p className="flex text-gray-600 text-sm items-center pr-2"><span className="pr-1"><ComputerComponent/></span> Online</p>):""}
 
-              <p className="pt-10 text-sm font-medium"><span className="text-2xl font-bold">Total: {"$" + (parseInt(course.Price) * formData.quantity) }</span> {"($" + course.Price +" per person)"}</p>
+              <p className="pt-10 text-sm font-medium"><span className="text-2xl font-bold">Total: {"$" + (parseInt(service.Price)) }</span></p>
 
         </div>
         <div className="p-6 px-10 border-r-2">
           <h2 className="text-2xl pb-6 font-semibold text-background uppercase font-teko" >Details</h2>
-          <div className="pb-2">
-              <label className="text-background font-semibold" htmlFor="quantity">Number Of Attendees *</label>
-              <input
-                id="quantity"
-                type="number"
-                min="1" max="20"
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-foreground focus:outline-none focus:ring"
-                value={formData.quantity}
-                onChange={handleChange}
-                required
-              />
-            </div>
+         
           <div className="pb-2">
               <label className="text-background font-semibold" htmlFor="name">Your Name *</label>
               <input
@@ -249,37 +197,31 @@ export default function BookingCoursePage() {
           </div>
         </div>
         <div className="p-6 mt-auto">
-          {/* <h2 className="text-2xl pb-6 font-semibold text-background uppercase font-teko" >Details</h2> */}
-          <div className="pb-2">
-          <label className="flex text-gray-600 text-sm items-center pr-2">
-            <input
-              type="checkbox"
-              name="groupClasses"
-              checked={formData.groupClasses}
-              onChange={handleChange}
-            />
-            Subscribe to Torchlight Foundation’s newsletter
-          </label>
+          <div className="pb-6">
+              <label className="text-background font-semibold" htmlFor="message">Message *</label>
+              <textarea
+                id="message"
+                rows={8}
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-foreground focus:outline-none focus:ring"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
           {/* Hidden input */}
           <input
             type="hidden"
-            name="coursePrice"
-            value={formData.coursePrice}
+            name="servicePrice"
+            value={formData.servicePrice}
           />
           <input
             type="hidden"
-            name="courseName"
-            value={formData.courseName}
+            name="serviceName"
+            value={formData.serviceName}
           />
-          <input
-            type="hidden"
-            name="courseCode"
-            value={formData.courseCode}
-          />
-        </div>
-          <BlueButton label="Book Course" isSubmit={true}/>
-          <p className="pt-2 text-xs text-gray-600">*By clicking  "Book Course", you agree to our T&Cs</p>
+          <BlueButton label="Book Service" isSubmit={true}/>
+          <p className="pt-2 text-xs text-gray-600">*By clicking  "Book Service", you agree to our T&Cs</p>
         </div>
         
           </form>

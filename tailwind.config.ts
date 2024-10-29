@@ -37,5 +37,10 @@ const config: Config = {
     },
   },
   plugins: [],
+  safelist: [{
+    pattern: /fill-.*/
+}
+
+]
 };
 export default config;

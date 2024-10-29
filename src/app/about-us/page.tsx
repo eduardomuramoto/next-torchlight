@@ -16,9 +16,9 @@ export default function GetSupportPage() {
         <JumboHeader 
           alignTop={false}
           subTitle="About Us" 
-          title="Our Mission" 
+          title="Shining light for a brighter future" 
           imgUrl={jumboPhoto} 
-          paragraphs={["At Torchlight Foundation, our mission is to provide multifaceted support to victim survivors of domestic and family violence, assault, and child sexual abuse. We understand that domestic abuse is a complex and contentious issue often surrounded by myths and misconceptions. However, we exist not only to end it but also to promote healthy families and relationships built on the foundations of kindness and respect."]}
+          paragraphs={["Torchlight Foundation is committed to driving positive change against domestic violence by challenging the status quo and envisioning a safer future for all. We foster a culture of respect and compassion through education, advocacy, and support. Together, we strive to create a more united and compassionate society."]}
         />
           <SubNavBar Links={[
           {url:"#CEO",label:"CEO & Founder"},
