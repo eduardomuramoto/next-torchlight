@@ -221,7 +221,7 @@ export default function BookingServicePage() {
                 value={formData.serviceName}
               />
               <BlueButton label="Book Service" isSubmit={true} />
-              <p className="pt-2 text-xs text-gray-600">*By clicking  "Book Service", you agree to our T&Cs</p>
+              <p className="pt-2 text-xs text-gray-600">*By clicking  &quot;Book Service&quot;, you agree to our T&Cs</p>
             </div>
 
           </form>

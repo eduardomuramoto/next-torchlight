@@ -27,7 +27,7 @@ export default function CeoSection({ title, subTitle, paragraphs, imgUrl, style 
         </div>
         <h2 className={titleColor + " font-teko text-6xl uppercase font-semibold pb-6"}>{title}</h2>
         <div className={bgColor + "  w-[80%] rounded-2xl p-12 mr-40 pr-36 shadow-md"}>
-          <h3 className="text-foreground font-teko uppercase text-5xl pb-6 font-semibold"><span className="pr-2">"</span>{subTitle.split(",").join(",\n").split("\n").map(line => <span key={line}>{line}<br /></span>)}</h3>
+          <h3 className="text-foreground font-teko uppercase text-5xl pb-6 font-semibold"><span className="pr-2">&quot;</span>{subTitle.split(",").join(",\n").split("\n").map(line => <span key={line}>{line}<br /></span>)}</h3>
           {paragraphs ? paragraphs.map((paragraph) => {
             return (<p className="text-gray-800 pb-4" key={paragraph}>{paragraph}</p>)
           })
