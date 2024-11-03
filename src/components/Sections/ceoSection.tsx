@@ -1,14 +1,21 @@
 import Image, { StaticImageData } from "next/image"
 import photo from "@images/Lisa.png"
 import signature from "@images/LisaCotton.png"
+import Bg from "@images/section_bg.svg"
 
 export default function CeoSection({ title, subTitle, paragraphs, imgUrl, style = "blue" }: { title: string, subTitle: string, paragraphs: string[], imgUrl?: StaticImageData, style?: string }) {
-  const bgColor = style === "orange" ? "bg-lightForeground" : "bg-lightForeground";
+  const bgColor = style === "orange" ? "bg-lightBackground" : "bg-gradient-to-br from-orange-50 to-orange-100";
   const titleColor = style === "orange" ? "text-foreground" : "text-background";
 
 
   return (
-    <div className={"bg-white w-full flex flex-col p-16 lg:px-36"}>
+    <div className={"bg-lightForeground w-full flex flex-col p-16 lg:px-36 relative"}>
+      <Image
+        src={Bg}
+        alt="Background"
+        className="lazyload absolute w-full bottom-0 left-0"
+        width={300}
+      />
       <div className="flex items-center flex-col relative">
         <div className="absolute bottom-0 right-0 h-96 w-auto">
           <Image
@@ -18,9 +25,9 @@ export default function CeoSection({ title, subTitle, paragraphs, imgUrl, style 
             width={300}
           />
         </div>
-        <h2 className={titleColor + " font-teko text-4xl uppercase font-semibold pb-6"}>{title}</h2>
-        <div className={bgColor + "  w-[80%] rounded-lg p-12 mr-40 pr-36"}>
-          <h3 className="text-foreground font-teko uppercase text-6xl pb-6 font-semibold"><span className="pr-2">"</span>{subTitle}</h3>
+        <h2 className={titleColor + " font-teko text-6xl uppercase font-semibold pb-6"}>{title}</h2>
+        <div className={bgColor + "  w-[80%] rounded-2xl p-12 mr-40 pr-36 shadow-md"}>
+          <h3 className="text-foreground font-teko uppercase text-5xl pb-6 font-semibold"><span className="pr-2">"</span>{subTitle.split(",").join(",\n").split("\n").map(line => <span key={line}>{line}<br /></span>)}</h3>
           {paragraphs ? paragraphs.map((paragraph) => {
             return (<p className="text-gray-800 pb-4" key={paragraph}>{paragraph}</p>)
           })
@@ -42,6 +49,7 @@ export default function CeoSection({ title, subTitle, paragraphs, imgUrl, style 
           </div>
         </div>
       </div>
+
     </div>
   )
 }
