@@ -43,7 +43,7 @@ export default function Header() {
             }
           `,
         });
-        setMenuItems(result.data.menusMenu.data.attributes.items.data.attributes);
+        setMenuItems(result.data.menusMenu.data.attributes.items.data.map((item: { attributes: MenuItem }) => item.attributes));
       } catch (error) {
         console.error("Error fetching menu:", error);
       }

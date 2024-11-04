@@ -6,7 +6,7 @@ import OtherCoursesSection from "@/components/Sections/otherCoursesSection";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from "react";
-import { Course } from "@/interfaces/course.interface";
+import { Course, RelatedCourse } from "@/interfaces/course.interface";
 // import CourseCard from "../Cards/courseCard";
 
 const client = new ApolloClient({
@@ -87,8 +87,8 @@ export default function CoursePage() {
         }
       })
       .then((result) => {
-        // console.log("Result",result)
         setCourse(result.data.courses.data[0].attributes)
+        // console.log("Result", course?.courses.data)
         setLoading(false)
       })
   }, [params.slug, course])
@@ -129,7 +129,7 @@ export default function CoursePage() {
             duration={course.courseDuration}
           />
         </div>
-        <OtherCoursesSection coursesArr={course.courses.data.attributes} />
+        <OtherCoursesSection otherCourses={course.courses.data.map((item: { attributes: RelatedCourse }) => item.attributes)} />
       </main>
 
     </div>

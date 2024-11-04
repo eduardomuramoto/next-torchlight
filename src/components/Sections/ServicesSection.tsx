@@ -23,7 +23,7 @@ await client
         }
     }`,
   })
-  .then((result) => { servicesArr = result.data.services.data.attributes })
+  .then((result) => { servicesArr = result.data.services.data.map((item: { attributes: Service }) => item.attributes) })
 // .then((result) => { console.log(result.errors) });
 
 // 

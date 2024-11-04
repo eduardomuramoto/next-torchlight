@@ -23,6 +23,10 @@ export interface RelatedCourse {
   courseDuration: CourseDuration;
 }
 
+export interface RelatedCourseAtt {
+  attributes: RelatedCourse
+}
+
 export interface Course {
   CourseName: string;
   courseCode: string;
@@ -37,9 +41,7 @@ export interface Course {
     }[];
   };
   courses: {
-    data: {
-      attributes: RelatedCourse[];
-    };
+    data: RelatedCourseAtt[]
   };
 }
 
