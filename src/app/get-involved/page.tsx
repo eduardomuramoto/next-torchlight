@@ -3,7 +3,6 @@ import OverlapSection from "@/components/Sections/OverlapSection";
 import JumboHeader from "@/components/Sections/pageJumboHeader";
 import volunteerPhoto from "@images/Volunteer.jpg"
 import donatePhoto from "@images/donate.webp"
-import { url } from "inspector";
 
 
 
@@ -22,7 +21,7 @@ export default function GetInvolvedPage() {
             "Join our team of compassionate volunteers today and be a part of the solution.",
             "Together, let's break the cycle of domestic violence and create a brighter future for all."
           ]}
-          button={{ label: "Become a volunteer", url: "/get-involved/volunteer" }}
+          button={{ label: "Join Us", url: "/get-involved/volunteer" }}
         />
         {/* <OverlapSection
           style="red"
