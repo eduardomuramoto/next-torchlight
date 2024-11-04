@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image"
 import photo from "@images/donate.webp"
 import OrangeButton from "../Buttons/orangeButton";
 
-export default function OverlapSection({ title, subTitle, paragraphs, imgUrl, style = "orange", reverse = false, smallPicture = false }: { title: string, subTitle: string, paragraphs: string[], imgUrl?: StaticImageData, style?: string, reverse?: boolean, smallPicture?: boolean }) {
+export default function OverlapSection({ title, paragraphs, imgUrl, style = "orange", reverse = false, smallPicture = false }: { title: string, subTitle: string, paragraphs: string[], imgUrl?: StaticImageData, style?: string, reverse?: boolean, smallPicture?: boolean }) {
   const bgColor = style === "orange" ? "bg-lightForeground" : "bg-redBackground";
   const titleColor = style === "orange" ? "text-foreground" : "text-background";
   const reverseCols = reverse ? "flex-row-reverse " : "";

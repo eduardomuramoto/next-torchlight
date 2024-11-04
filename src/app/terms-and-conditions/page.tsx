@@ -8,7 +8,7 @@ export default function TermsAndConditionsPage() {
         <h1 className="font-teko text-6xl uppercase font-semibold pb-2 text-background">Terms & Conditions</h1>
         <p>
           Last Updated: November 2023
-          Welcome toTorchlight Foundation ("we," "our," or "us"). By using our website, you agree to comply with and be bound by the following terms and conditions. If you do not agree with these terms, please do not use our website.
+          Welcome toTorchlight Foundation (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). By using our website, you agree to comply with and be bound by the following terms and conditions. If you do not agree with these terms, please do not use our website.
           1. Acceptance of Terms:
           1.1 Agreement:
           These terms and conditions constitute a legally binding agreement between you and Torchlight Foundation

@@ -17,10 +17,10 @@ export interface Facilitator {
 export interface RelatedCourse {
   CourseName: string;
   courseCode: string;
-  Location: string;
-  Price: number;
+  Location: string[];
+  Price: string;
   slug: string;
-  courseDuration?: CourseDuration;
+  courseDuration: CourseDuration;
 }
 
 export interface Course {
@@ -38,14 +38,14 @@ export interface Course {
   };
   courses: {
     data: {
-      attributes: RelatedCourse;
-    }[];
+      attributes: RelatedCourse[];
+    };
   };
 }
 
 export interface CourseData {
   id: string;
-  attributes: CourseAttributes;
+  attributes: Course;
 }
 
 export interface CourseQueryResponse {

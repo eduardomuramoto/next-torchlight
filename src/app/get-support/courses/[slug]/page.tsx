@@ -129,7 +129,7 @@ export default function CoursePage() {
             duration={course.courseDuration}
           />
         </div>
-        <OtherCoursesSection coursesArr={course.courses.data} />
+        <OtherCoursesSection coursesArr={course.courses.data.attributes} />
       </main>
 
     </div>

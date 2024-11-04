@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image"
+import Image from "next/image"
 import photo from "@images/JusticeRadio.jpg"
 import BlueButton from "../Buttons/blueButton"
 

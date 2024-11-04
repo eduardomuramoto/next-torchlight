@@ -7,6 +7,7 @@ import PhoneComponent from "./Icons/phone";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Link from "next/link";
 import DonateButton from "./Buttons/donateButton";
+import { MenuItem } from "@/interfaces/menu.interface";
 
 const client = new ApolloClient({
   uri: `${process.env.NEXT_PUBLIC_CMS_GRAPHQL}`,
@@ -15,7 +16,7 @@ const client = new ApolloClient({
 });
 
 export default function Header() {
-  const [menuItems, setMenuItems] = useState<any[]>([]);
+  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -42,7 +43,7 @@ export default function Header() {
             }
           `,
         });
-        setMenuItems(result.data.menusMenu.data.attributes.items.data);
+        setMenuItems(result.data.menusMenu.data.attributes.items.data.attributes);
       } catch (error) {
         console.error("Error fetching menu:", error);
       }
@@ -100,12 +101,12 @@ export default function Header() {
         >
           <ul className="w-full lg:flex justify-between items-center text-background font-semibold">
             {menuItems.map((menuItem) => (
-              <Link href={menuItem.attributes.url} key={menuItem.attributes.url}>
+              <Link href={menuItem.url} key={menuItem.url}>
                 <li
                   className="cursor-pointer group relative py-2 lg:py-0 w-fit m-auto"
                   onClick={handleMenuItemClick} // Close the menu on click
                 >
-                  {menuItem.attributes.title}
+                  {menuItem.title}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-background transition-all group-hover:w-full"></span>
                 </li>
               </Link>

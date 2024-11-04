@@ -1,7 +1,7 @@
 export interface Service {
   Name: string,
-  Price: string,
+  Price: number,
   slug: string,
-  serviceIcon: string,
+  ServiceIcon: string,
   Description: string,
 }
