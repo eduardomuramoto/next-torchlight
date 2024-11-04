@@ -128,7 +128,7 @@ export default function BookingServicePage() {
         phone: "",
         message: "",
         serviceName: service.Name,
-        servicePrice: parseInt(service.Price),
+        servicePrice: service.Price,
       }); // Clear form fields
     } catch (error) {
       console.error("Error sending email:", error);
@@ -151,7 +151,7 @@ export default function BookingServicePage() {
               <p className="text-start text-gray-800 font-normal pb-2">{service.Description}</p>
 
 
-              <p className="pt-10 text-sm font-medium"><span className="text-2xl font-bold">Total: {"$" + (parseInt(service.Price))}</span></p>
+              <p className="pt-10 text-sm font-medium"><span className="text-2xl font-bold">Total: {"$" + (service.Price)}</span></p>
 
             </div>
             <div className="p-6 px-10 lg:border-r-2">
