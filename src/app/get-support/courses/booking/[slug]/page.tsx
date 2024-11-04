@@ -6,6 +6,7 @@ import InPersonComponent from "@/components/Icons/inPerson";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { useParams, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from "react";
+import { Course } from "@/interfaces/course.interface";
 // import CourseCard from "../Cards/courseCard";
 
 const client = new ApolloClient({
@@ -35,27 +36,6 @@ const COURSE_QUERY = gql`query Course($slug: String!) {
       }
     }
 }`;
-
-interface Course {
-  CourseName: string,
-  courseCode: string,
-  Price: string,
-  slug: string,
-  Location: string[],
-  courseDuration: string,
-  courseObjectives: any[],
-  facilitators: {
-    data: [{
-      attributes: {
-        Name: string,
-        Description: string,
-      }
-    }],
-  },
-  courses: {
-    data: any[],
-  }
-}
 
 // Define the shape of the form data
 interface FormData {
@@ -275,7 +255,7 @@ export default function BookingCoursePage() {
                 />
               </div>
               <BlueButton label="Book Course" isSubmit={true} />
-              <p className="pt-2 text-xs text-gray-600">*By clicking  "Book Course", you agree to our T&Cs</p>
+              <p className="pt-2 text-xs text-gray-600">*By clicking  &quot;Book Course&quot;, you agree to our T&Cs</p>
             </div>
 
           </form>

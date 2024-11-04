@@ -9,7 +9,7 @@ export default function PrivacyPage() {
         <p>Last Updated: November 2023</p>
 
         <p>
-          Torchlight Foundation ("we," "our," or "us") is committed to protecting the privacy of individuals who visit our website. This Privacy Policy outlines the types of personal information we collect, how it is used, and the choices you have regarding your information.
+          Torchlight Foundation (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting the privacy of individuals who visit our website. This Privacy Policy outlines the types of personal information we collect, how it is used, and the choices you have regarding your information.
         </p>
 
         <h6>

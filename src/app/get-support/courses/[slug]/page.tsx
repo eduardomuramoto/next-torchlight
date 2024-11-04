@@ -6,6 +6,7 @@ import OtherCoursesSection from "@/components/Sections/otherCoursesSection";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from "react";
+import { Course } from "@/interfaces/course.interface";
 // import CourseCard from "../Cards/courseCard";
 
 const client = new ApolloClient({
@@ -68,26 +69,6 @@ const COURSE_QUERY = gql`query Course($slug: String!) {
     }
 }`;
 
-interface Course {
-  CourseName: string,
-  courseCode: string,
-  Price: string,
-  slug: string,
-  Location: string[],
-  courseDuration: string,
-  courseObjectives: any[],
-  facilitators: {
-    data: [{
-      attributes: {
-        Name: string,
-        Description: string,
-      }
-    }],
-  },
-  courses: {
-    data: any[],
-  }
-}
 
 
 

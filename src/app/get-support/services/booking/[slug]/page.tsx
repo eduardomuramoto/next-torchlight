@@ -1,8 +1,10 @@
 "use client"
 import BlueButton from "@/components/Buttons/blueButton";
+import { Service } from "@/interfaces/service.interface";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from "react";
+
 // import CourseCard from "../Cards/courseCard";
 
 const client = new ApolloClient({
@@ -25,13 +27,6 @@ const COURSE_QUERY = gql`query Course($slug: String!) {
     }
 }`;
 
-interface Service {
-  Name: string,
-  Price: string,
-  slug: string,
-  serviceIcon: string,
-  Description: string,
-}
 
 // Define the shape of the form data
 interface FormData {
