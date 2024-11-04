@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,10 +23,24 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@images/*": ["./public/images/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@images/*": [
+        "./public/images/*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/get-support/courses/[slug]/page.tsx.backup", "src/components/Buttons/outlineButton.tsx.bckp"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/get-support/courses/[slug]/page.tsx.backup",
+    "src/components/Buttons/outlineButton.tsx.bckp",
+    "src/app/api/checkout/route.ts.bckup"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
