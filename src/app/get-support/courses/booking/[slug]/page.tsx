@@ -7,6 +7,7 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { useParams, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from "react";
 import { Course } from "@/interfaces/course.interface";
+
 // import CourseCard from "../Cards/courseCard";
 
 const client = new ApolloClient({
@@ -108,7 +109,7 @@ export default function BookingCoursePage() {
   }, [params.slug, course])
 
   if (isLoading) return <p>Loading...</p>
-  if (!course) return <p>No course data</p>
+  if (!course) return <p>Loading...</ p>
 
 
 

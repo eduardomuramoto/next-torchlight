@@ -18,6 +18,7 @@ const client = new ApolloClient({
 
 export default function Header() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
+  const [isLoading, setLoading] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -45,6 +46,7 @@ export default function Header() {
           `,
         });
         setMenuItems(result.data.menusMenu.data.attributes.items.data.map(((item: { attributes: MenuItem }) => item.attributes)));
+        setLoading(false)
       } catch (error) {
         console.error("Error fetching menu:", error);
       }
@@ -57,6 +59,9 @@ export default function Header() {
   const handleMenuItemClick = () => {
     setMenuOpen(false); // Close the menu
   };
+
+  if (isLoading) return <p>Loading...</p>
+  if (!menuItems) return <p>Loading...</ p>
 
   return (
     <header className="bg-foreground shadow-md text-center text-surface/75 text-white/75 lg:text-left sticky top-0 z-20">
