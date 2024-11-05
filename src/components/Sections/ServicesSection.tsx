@@ -43,7 +43,7 @@ export default function ServicesSection() {
   }, []); // Empty dependency array ensures the effect runs once when the component mounts
 
   return (
-    <div className="bg-extraLightForeground w-full p-10 px-20 flex flex-col gap-8 row-start-2" id="services">
+    <div className="bg-extraLightForeground w-full p-10 px-6 sm:px-20 flex flex-col gap-8 row-start-2" id="services">
       <h2 className="font-teko text-5xl uppercase font-semibold pb-6 text-background">Our Services</h2>
       <div className="flex flex-wrap justify-between gap-10">
         {servicesArr?.map((service) => {

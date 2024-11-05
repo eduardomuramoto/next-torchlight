@@ -19,7 +19,7 @@ type CourseCardProps = {
 
 export default function CourseCard({ courseColor, title, category, price, slug, location, duration }: CourseCardProps) {
   return (
-    <div className="relative overflow-hidden flex flex-col justify-between p-6 max-w-sm min-h-96 min-w-80 bg-white border-2 border-background text-background font-semibold rounded-md">
+    <div className="relative overflow-hidden flex flex-col justify-between p-6 max-w-sm min-h-96 sm:min-w-80 bg-white border-2 border-background text-background font-semibold rounded-md">
       <CornerComponent color={courseColor} className="absolute top-0 right-0 w-5/12 h-auto" />
       <div className="w-11/12">
         <h6 className="text-sm font-thin">{category}</h6>

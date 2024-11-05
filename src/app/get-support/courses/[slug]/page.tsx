@@ -105,12 +105,12 @@ export default function CoursePage() {
       <main className="flex flex-col row-start-2 items-center sm:items-start">
         <div className="relative w-full">
           <div className="bg-lightBackground w-full p-10 px-20 flex flex-col gap-8 row-start-2">
-            <div className="w-2/3">
+            <div className="lg:w-2/3">
               <p>{"#" + course.courseCode.replace("_", "-")}</p>
               <h1 className="text-2xl pb-6 font-semibold text-background" >{course.CourseName}</h1>
               {/* <h1 className="text-2xl pb-6 font-semibold text-background" >Skills4life: Domestic Violence Prevention & Awareness Training Course</h1> */}
               <h2 className="font-teko text-5xl uppercase font-semibold pb-6 text-background">What You’ll learn</h2>
-              <div className="flex flex-wrap justify-start gap-10">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 justify-start gap-10">
                 {course.courseObjectives.map((objective) => {
                   return <IconCard
                     key={objective.Icon}

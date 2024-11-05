@@ -26,10 +26,10 @@ export default function ServiceCard({ slug, title, description, icon }: ServiceC
   };
 
   return (
-    <div className="flex flex-col items-center max-h-80 max-w-72 py-4 px-6 bg-lightForeground border-[3px] border-background text-background font-semibold rounded-md">
-      {icon === "advocacy" ? <AdvocacyComponent className="max-h-20" /> : ""}
-      {icon === "counselling" ? <CounsellingComponent className="max-h-20" /> : ""}
-      {icon === "legal" ? <LegalComponent className="max-h-20" /> : ""}
+    <div className="flex flex-col items-center max-w-72 py-4 px-6 bg-lightForeground border-[3px] border-background text-background font-semibold rounded-md">
+      {icon === "advocacy" ? <AdvocacyComponent className="max-h-20 min-h-12 h-12" /> : ""}
+      {icon === "counselling" ? <CounsellingComponent className="max-h-20 min-h-12 h-12" /> : ""}
+      {icon === "legal" ? <LegalComponent className="max-h-20 min-h-12 h-12" /> : ""}
       <h3 className="font-teko text-3xl uppercase font-medium py-2">{title}</h3>
 
       <p className="text-center text-gray-800 font-normal pb-2">{description}</p>

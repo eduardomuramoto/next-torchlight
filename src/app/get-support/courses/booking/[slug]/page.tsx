@@ -166,11 +166,11 @@ export default function BookingCoursePage() {
   return (
     <div className="">
       <main className="flex flex-col row-start-2 items-center sm:items-start">
-        <div className="relative w-full p-10 px-20 bg-white">
+        <div className="relative w-full p-10 md:px-20 bg-white">
           <form onSubmit={handleSubmit} className="grid lg:grid-cols-3">
             <div className="relative overflow-hidden flex flex-col p-6 bg-white border-2 border-background text-background font-semibold rounded-md">
               <h2 className="text-2xl pb-6 font-semibold text-background uppercase font-teko" >Your Course</h2>
-              <h1 className="text-4xl font-semibold text-foreground uppercase font-teko" >{course.CourseName}</h1>
+              <h1 className="text-3xl sm:text-4xl font-semibold text-foreground uppercase font-teko" >{course.CourseName}</h1>
               <p className="pb-6">{"#" + course.courseCode.replace("_", "-")}</p>
 
               <p className="flex text-gray-600 text-sm items-center pr-2"><span className="pr-1"><ClockComponent /></span>{course.courseDuration.value + " " + course.courseDuration.unit + (course.courseDuration.value > 1 ? "s" : "")}</p>
@@ -181,7 +181,7 @@ export default function BookingCoursePage() {
               <p className="pt-10 text-sm font-medium"><span className="text-2xl font-bold">Total: {"$" + (parseInt(course.Price) * formData.quantity)}</span> {"($" + course.Price + " per person)"}</p>
 
             </div>
-            <div className="p-6 px-10 lg:border-r-2">
+            <div className="p-6 md:px-10 lg:border-r-2">
               <h2 className="text-2xl pb-6 font-semibold text-background uppercase font-teko" >Details</h2>
               <div className="pb-2">
                 <label className="text-background font-semibold" htmlFor="quantity">Number Of Attendees *</label>

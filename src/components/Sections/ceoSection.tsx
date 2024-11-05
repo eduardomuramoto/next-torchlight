@@ -9,7 +9,7 @@ export default function CeoSection({ title, subTitle, paragraphs, imgUrl, style 
 
 
   return (
-    <div className={"bg-lightForeground w-full flex flex-col p-16 lg:px-36 relative"}>
+    <div className={"bg-lightForeground w-full flex flex-col p-16 px-6 sm:px-16 lg:px-36 relative"}>
       <Image
         src={Bg}
         alt="Background"
@@ -17,7 +17,7 @@ export default function CeoSection({ title, subTitle, paragraphs, imgUrl, style 
         width={300}
       />
       <div className="flex items-center flex-col relative">
-        <div className="absolute bottom-0 right-0 h-96 w-auto">
+        <div className="sm:absolute bottom-0 right-0 h-96 w-auto hidden">
           <Image
             src={imgUrl ? imgUrl : photo}
             alt="Get Support photo"
@@ -26,8 +26,8 @@ export default function CeoSection({ title, subTitle, paragraphs, imgUrl, style 
           />
         </div>
         <h2 className={titleColor + " font-teko text-6xl uppercase font-semibold pb-6"}>{title}</h2>
-        <div className={bgColor + "  w-[80%] rounded-2xl p-12 mr-40 pr-36 shadow-md"}>
-          <h3 className="text-foreground font-teko uppercase text-5xl pb-6 font-semibold"><span className="pr-2">&quot;</span>{subTitle.split(",").join(",\n").split("\n").map(line => <span key={line}>{line}<br /></span>)}</h3>
+        <div className={bgColor + "  sm:w-[80%] rounded-2xl p-6 sm:p-12 sm:mr-40 sm:pr-36 shadow-md"}>
+          <h3 className="text-foreground font-teko uppercase text-2xl sm:text-5xl pb-6 font-semibold"><span className="pr-2">&quot;</span>{subTitle.split(",").join(",\n").split("\n").map(line => <span key={line}>{line}<br /></span>)}</h3>
           {paragraphs ? paragraphs.map((paragraph) => {
             return (<p className="text-gray-800 pb-4" key={paragraph}>{paragraph}</p>)
           })

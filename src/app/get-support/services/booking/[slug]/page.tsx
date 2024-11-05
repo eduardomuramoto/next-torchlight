@@ -142,7 +142,7 @@ export default function BookingServicePage() {
   return (
     <div className="">
       <main className="flex flex-col row-start-2 items-center sm:items-start">
-        <div className="relative w-full p-10 px-20 bg-white">
+        <div className="relative w-full p-10 md:px-20 bg-white">
           <form onSubmit={handleSubmit} className="grid lg:grid-cols-3">
             <div className="relative overflow-hidden flex flex-col p-6 bg-white border-2 border-background text-background font-semibold rounded-md">
               <h2 className="text-2xl pb-6 font-semibold text-background uppercase font-teko" >Your Service</h2>
@@ -154,7 +154,7 @@ export default function BookingServicePage() {
               <p className="pt-10 text-sm font-medium"><span className="text-2xl font-bold">Total: {"$" + (service.Price)}</span></p>
 
             </div>
-            <div className="p-6 px-10 lg:border-r-2">
+            <div className="p-6 md:px-10 lg:border-r-2">
               <h2 className="text-2xl pb-6 font-semibold text-background uppercase font-teko" >Details</h2>
 
               <div className="pb-2">
