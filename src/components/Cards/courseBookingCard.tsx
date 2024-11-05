@@ -52,8 +52,8 @@ export default function CourseBookingCard({ courseColor, category, price, slug, 
 
 
   return (
-    <div className="bg-white lg:bg-transparent w-full lg:w-auto lg:absolute top-0 right-0 p-10 px-20">
-      <div className="relative overflow-hidden flex flex-col p-6 max-w-sm min-w-80 bg-white border-2 border-background text-background font-semibold rounded-md">
+    <div className="bg-white lg:bg-transparent w-full lg:w-auto lg:absolute top-0 right-0 p-10 sm:px-20">
+      <div className="relative overflow-hidden flex flex-col p-6 max-w-sm sm:min-w-80 bg-white border-2 border-background text-background font-semibold rounded-md">
         <CornerComponent color={courseColor} className="absolute top-0 right-0 w-5/12 h-auto" />
         <form onSubmit={handleSubmit} className="">
 

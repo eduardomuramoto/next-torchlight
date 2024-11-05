@@ -104,7 +104,7 @@ export default function CoursePage() {
     <div className="">
       <main className="flex flex-col row-start-2 items-center sm:items-start">
         <div className="relative w-full">
-          <div className="bg-lightBackground w-full p-10 px-20 flex flex-col gap-8 row-start-2">
+          <div className="bg-lightBackground w-full p-10 sm:px-20 flex flex-col gap-8 row-start-2">
             <div className="lg:w-2/3">
               <p>{"#" + course.courseCode.replace("_", "-")}</p>
               <h1 className="text-2xl pb-6 font-semibold text-background" >{course.CourseName}</h1>

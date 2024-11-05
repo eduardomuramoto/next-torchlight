@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
-  const { name, email, phone, message, quantity, courseName, courseCode, coursePrice } = await req.json();
+  const { name, email, phone, message, quantity, courseName, courseCode, coursePrice, groupClasses} = await req.json();
 
   // Configure Nodemailer transporter
   const transporter = nodemailer.createTransport({
@@ -23,6 +23,9 @@ export async function POST(req: Request) {
         Name: ${name}
         Email: ${email}
         Phone: ${phone}
+
+        This booking is a ${groupClasses? " Group Class": " Individual Booking"}
+
         Message: ${message}
         Course Code: #${courseCode }
         Course Name: ${courseName }

@@ -63,6 +63,7 @@ export default function BookingCoursePage() {
   const params = useParams();
   const searchParams = useSearchParams();
   const location = (searchParams.get("location"));
+  const groupClasses = (searchParams.get("groupClasses") === "true");
   const [course, setCourse] = useState<Course>()
   const [isLoading, setLoading] = useState(false)
   const [formData, setFormData] = useState<FormData>({
@@ -99,14 +100,14 @@ export default function BookingCoursePage() {
           phone: "",
           message: "",
           quantity: 1,
-          groupClasses: false,
+          groupClasses: groupClasses,
           courseName: result.data.courses.data[0].attributes.CourseName,
           courseCode: result.data.courses.data[0].attributes.courseCode,
           coursePrice: parseInt(result.data.courses.data[0].attributes.Price),
         });
         setLoading(false)
       })
-  }, [params.slug, course])
+  }, [params.slug, course, groupClasses])
 
   if (isLoading) return <p>Loading...</p>
   if (!course) return <p>Loading...</ p>
@@ -149,7 +150,7 @@ export default function BookingCoursePage() {
         phone: "",
         message: "",
         quantity: 1,
-        groupClasses: false,
+        groupClasses: groupClasses,
         courseName: course.CourseName,
         courseCode: course.courseCode,
         coursePrice: parseInt(course.Price),
@@ -177,6 +178,7 @@ export default function BookingCoursePage() {
 
               {location?.includes("in-person") ? (<p className="flex text-gray-600 text-sm items-center pr-2"><span className="pr-1"><InPersonComponent /></span> In-Person</p>) : ""}
               {location?.includes("online") ? (<p className="flex text-gray-600 text-sm items-center pr-2"><span className="pr-1"><ComputerComponent /></span> Online</p>) : ""}
+              {groupClasses ? (<p className="flex text-gray-600 text-sm items-center pr-2">Booking for Group Classes</p>) : ""}
 
               <p className="pt-10 text-sm font-medium"><span className="text-2xl font-bold">Total: {"$" + (parseInt(course.Price) * formData.quantity)}</span> {"($" + course.Price + " per person)"}</p>
 
@@ -254,6 +256,11 @@ export default function BookingCoursePage() {
                   type="hidden"
                   name="coursePrice"
                   value={formData.coursePrice}
+                />
+                <input
+                  type="hidden"
+                  name="groupClasses"
+                  checked={formData.groupClasses}
                 />
                 <input
                   type="hidden"
