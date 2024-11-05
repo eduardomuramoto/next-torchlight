@@ -1,32 +1,42 @@
+"use client"
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import CourseCard from "../Cards/courseCard";
 import { Course } from "@/interfaces/course.interface";
+import { useEffect, useState } from "react";
 
 const client = new ApolloClient({
   uri: `${process.env.NEXT_PUBLIC_CMS_GRAPHQL}`,
   cache: new InMemoryCache(),
+  credentials: 'include'
 });
-let coursesArr: Course[];
-await client
-  .query({
-    query: gql`query Courses {
-      getSupport{
-        data{
-          attributes{
-            Courses{
-              courses{
-                data{
-                  attributes{
-                    CourseName
-                    courseCode
-                    Location
-                    Price
-                    slug
-                      courseDuration{
-                      __typename
-                      ...on ComponentCourseComponentsDuration{
-                        unit
-                        value
+
+export default function CoursesSection() {
+  const [coursesArr, setCoursesArr] = useState<Course[]>([]);
+
+  useEffect(() => {
+    const fetchMenu = async () => {
+      try {
+        const result = await client.query({
+          query: gql`
+            query Courses {
+        getSupport{
+          data{
+            attributes{
+              Courses{
+                courses{
+                  data{
+                    attributes{
+                      CourseName
+                      courseCode
+                      Location
+                      Price
+                      slug
+                        courseDuration{
+                        __typename
+                        ...on ComponentCourseComponentsDuration{
+                          unit
+                          value
+                        }
                       }
                     }
                   }
@@ -36,14 +46,18 @@ await client
           }
         }
       }
-    }`,
-  })
-  .then((result) => { coursesArr = result.data.getSupport.data.attributes.Courses.courses.data.map((item: { attributes: Course }) => item.attributes) })
-// .then((result) => { console.log(result) });
+          `,
+        });
+        setCoursesArr(result.data.getSupport.data.attributes.Courses.courses.data.map((item: { attributes: Course }) => item.attributes))
+      } catch (error) {
+        console.error("Error fetching menu:", error);
+      }
+    };
 
-// 
-export default function CoursesSection() {
-  console.log(coursesArr)
+    fetchMenu();
+  }, []); // Empty dependency array ensures the effect runs once when the component mounts
+
+  // console.log(coursesArr)
   return (
     <div className="bg-lightBackground w-full p-10 px-20 flex flex-col gap-8 row-start-2" id="courses">
       <h2 className="font-teko text-5xl uppercase font-semibold pb-6 text-background">Our Courses</h2>

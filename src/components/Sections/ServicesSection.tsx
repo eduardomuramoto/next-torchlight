@@ -1,15 +1,24 @@
+"use client"
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import ServiceCard from "../Cards/serviceCard";
 import { Service } from "@/interfaces/service.interface";
+import { useState, useEffect } from "react";
 
 const client = new ApolloClient({
   uri: `${process.env.NEXT_PUBLIC_CMS_GRAPHQL}`,
   cache: new InMemoryCache(),
+  credentials: 'include'
 });
-let servicesArr: Service[];
-await client
-  .query({
-    query: gql`query Services {
+
+export default function ServicesSection() {
+  const [servicesArr, setServicesArr] = useState<Service[]>([]);
+
+  useEffect(() => {
+    const fetchMenu = async () => {
+      try {
+        const result = await client.query({
+          query: gql`
+            query Services {
       services{
           data{
             attributes{
@@ -21,14 +30,18 @@ await client
             }
           }
         }
-    }`,
-  })
-  .then((result) => { servicesArr = result.data.services.data.map((item: { attributes: Service }) => item.attributes) })
-// .then((result) => { console.log(result.errors) });
+    }
+          `,
+        });
+        setServicesArr(result.data.services.data.map((item: { attributes: Service }) => item.attributes))
+      } catch (error) {
+        console.error("Error fetching menu:", error);
+      }
+    };
 
-// 
-export default function ServicesSection() {
-  console.log(servicesArr)
+    fetchMenu();
+  }, []); // Empty dependency array ensures the effect runs once when the component mounts
+
   return (
     <div className="bg-extraLightForeground w-full p-10 px-20 flex flex-col gap-8 row-start-2" id="services">
       <h2 className="font-teko text-5xl uppercase font-semibold pb-6 text-background">Our Services</h2>

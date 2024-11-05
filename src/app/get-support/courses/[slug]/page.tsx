@@ -91,6 +91,9 @@ export default function CoursePage() {
         // console.log("Result", course?.courses.data)
         setLoading(false)
       })
+      .catch((error) => {
+        console.error("Apollo Client Error:", error);
+      });
   }, [params.slug, course])
 
   if (isLoading) return <p>Loading...</p>

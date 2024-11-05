@@ -15,6 +15,7 @@ const client = new ApolloClient({
   credentials: 'include'
 });
 
+
 export default function Header() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,7 +44,7 @@ export default function Header() {
             }
           `,
         });
-        setMenuItems(result.data.menusMenu.data.attributes.items.data.map((item: { attributes: MenuItem }) => item.attributes));
+        setMenuItems(result.data.menusMenu.data.attributes.items.data.map(((item: { attributes: MenuItem }) => item.attributes)));
       } catch (error) {
         console.error("Error fetching menu:", error);
       }

@@ -42,6 +42,7 @@ interface FormData {
   name: string;
   email: string;
   phone: string;
+  message: string;
   quantity: number;
   groupClasses: boolean;
   coursePrice: number;
@@ -67,6 +68,7 @@ export default function BookingCoursePage() {
     name: "",
     email: "",
     phone: "",
+    message: "",
     quantity: 1,
     groupClasses: false,
     courseName: "",
@@ -94,6 +96,7 @@ export default function BookingCoursePage() {
           name: "",
           email: "",
           phone: "",
+          message: "",
           quantity: 1,
           groupClasses: false,
           courseName: result.data.courses.data[0].attributes.CourseName,
@@ -143,6 +146,7 @@ export default function BookingCoursePage() {
         name: "",
         email: "",
         phone: "",
+        message: "",
         quantity: 1,
         groupClasses: false,
         courseName: course.CourseName,
@@ -226,8 +230,8 @@ export default function BookingCoursePage() {
             </div>
             <div className="p-6 mt-auto">
               {/* <h2 className="text-2xl pb-6 font-semibold text-background uppercase font-teko" >Details</h2> */}
-              <div className="pb-2">
-                <label className="flex text-gray-600 text-sm items-center pr-2">
+              <div className="pb-10">
+                {/* <label className="flex text-gray-600 text-sm items-center pr-2">
                   <input
                     type="checkbox"
                     name="groupClasses"
@@ -235,8 +239,15 @@ export default function BookingCoursePage() {
                     onChange={handleChange}
                   />
                   Subscribe to Torchlight Foundation’s newsletter
-                </label>
-
+                </label> */}
+                <label className="text-background font-semibold" htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  rows={8}
+                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-foreground focus:outline-none focus:ring"
+                  value={formData.message}
+                  onChange={handleChange}
+                />
                 {/* Hidden input */}
                 <input
                   type="hidden"
