@@ -1,4 +1,4 @@
-
+"use client"
 import BlueButton from "@/components/Buttons/blueButton";
 import { Service } from "@/interfaces/service.interface";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
