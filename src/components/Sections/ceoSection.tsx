@@ -17,7 +17,7 @@ export default function CeoSection({ title, subTitle, paragraphs, imgUrl, style 
         width={300}
       />
       <div className="flex items-center flex-col relative">
-        <div className="sm:absolute bottom-0 right-0 h-96 w-auto hidden">
+        <div className="sm:absolute bottom-0 right-0 h-96 w-auto hidden sm:block">
           <Image
             src={imgUrl ? imgUrl : photo}
             alt="Get Support photo"

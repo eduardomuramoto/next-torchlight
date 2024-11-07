@@ -1,11 +1,15 @@
-import EnquirySection from "@/components/ ContactSection/enquiry";
+import EnquirySection from "@/components/Forms/enquiry";
 import CoursesSection from "@/components/Sections/CourseSection";
 import JumboHeader from "@/components/Sections/pageJumboHeader";
 import SubNavBar from "@/components/Sections/pageSubNavBar";
 import ServicesSection from "@/components/Sections/ServicesSection";
+import { Metadata } from "next";
 
 
-
+export const metadata: Metadata = {
+  title: "Get Support | Torchlight Foundation",
+  description: "Shining light for a better future",
+};
 export default function GetSupportPage() {
 
   return (

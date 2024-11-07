@@ -7,6 +7,7 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from "react";
 import { Course, RelatedCourse } from "@/interfaces/course.interface";
+import { Metadata } from "next";
 // import CourseCard from "../Cards/courseCard";
 
 const client = new ApolloClient({
@@ -71,7 +72,6 @@ const COURSE_QUERY = gql`query Course($slug: String!) {
 
 
 
-
 export default function CoursePage() {
   const params = useParams();
   // console.log(params);
@@ -79,6 +79,7 @@ export default function CoursePage() {
   const [isLoading, setLoading] = useState(false)
 
   useEffect(() => {
+    if (!client) return;
     client
       .query({
         query: COURSE_QUERY,

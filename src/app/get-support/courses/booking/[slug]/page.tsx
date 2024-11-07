@@ -84,6 +84,7 @@ export default function BookingCoursePage() {
   });
 
   useEffect(() => {
+    if (!client) return;
     client
       .query({
         query: COURSE_QUERY,

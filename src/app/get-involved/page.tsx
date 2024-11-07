@@ -1,10 +1,14 @@
-import EnquirySection from "@/components/ ContactSection/enquiry";
+import EnquirySection from "@/components/Forms/enquiry";
 import OverlapSection from "@/components/Sections/OverlapSection";
 import JumboHeader from "@/components/Sections/pageJumboHeader";
 import volunteerPhoto from "@images/Volunteer.jpg"
 import donatePhoto from "@images/donate.webp"
+import { Metadata } from "next";
 
-
+export const metadata: Metadata = {
+  title: "Get Involved | Torchlight Foundation",
+  description: "Shining light for a better future",
+};
 
 export default function GetInvolvedPage() {
 

@@ -1,4 +1,4 @@
-import EnquirySection from "@/components/ ContactSection/enquiry";
+import EnquirySection from "@/components/Forms/enquiry";
 import CeoSection from "@/components/Sections/ceoSection";
 import IconsSection from "@/components/Sections/iconsSection";
 import JumboHeader from "@/components/Sections/pageJumboHeader";
@@ -6,8 +6,12 @@ import SubNavBar from "@/components/Sections/pageSubNavBar";
 import jumboPhoto from "@images/About_Us.webp"
 import missionPhoto from "@images/our_mission.jpg"
 import visionPhoto from "@images/our_vision.jpg"
+import { Metadata } from "next";
 
-
+export const metadata: Metadata = {
+  title: "About Us | Torchlight Foundation",
+  description: "Shining light for a better future",
+};
 
 export default function GetSupportPage() {
 

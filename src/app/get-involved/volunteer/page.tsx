@@ -1,8 +1,12 @@
 import JumboHeader from "@/components/Sections/pageJumboHeader";
 import getInvolvedPhoto from "@images/get_involved.jpg"
-import VolunteerFormSection from "@/components/ ContactSection/volunteerForm";
+import VolunteerFormSection from "@/components/Forms/volunteerForm";
+import { Metadata } from "next";
 
-
+export const metadata: Metadata = {
+  title: "Volunteer | Torchlight Foundation",
+  description: "Shining light for a better future",
+};
 
 
 export default function VolunteerPage() {

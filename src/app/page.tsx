@@ -4,8 +4,12 @@ import OverlapSection from "@/components/Sections/OverlapSection";
 import volunteerPhoto from "@images/Volunteer.jpg"
 import JusticeRadioHeader from "@/components/Sections/justiceRadioSection";
 import ProjectsSection from "@/components/Sections/ProjectsSection";
+import { Metadata } from "next";
 
-
+export const metadata: Metadata = {
+  title: "Torchlight Foundation",
+  description: "Shining light for a better future",
+};
 
 export default function Home() {
 

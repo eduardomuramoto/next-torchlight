@@ -16,6 +16,7 @@ export default function CoursesSection() {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
+        if (!client) return;
         const result = await client.query({
           query: gql`
             query Courses {

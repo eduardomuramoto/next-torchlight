@@ -4,16 +4,17 @@ import Image from "next/image";
 import logo from "@/../public/images/Logo_Horizontal.png";
 import PhoneOutlineComponent from "./Icons/phone-outline";
 import PhoneComponent from "./Icons/phone";
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { gql } from "@apollo/client";
 import Link from "next/link";
 import DonateButton from "./Buttons/donateButton";
 import { MenuItem } from "@/interfaces/menu.interface";
+import client from "@/lib/ApolloClient";
 
-const client = new ApolloClient({
-  uri: `${process.env.NEXT_PUBLIC_CMS_GRAPHQL}`,
-  cache: new InMemoryCache(),
-  credentials: 'include'
-});
+// const client = new ApolloClient({
+//   uri: `${process.env.NEXT_PUBLIC_CMS_GRAPHQL}`,
+//   cache: new InMemoryCache(),
+//   credentials: 'include'
+// });
 
 
 export default function Header() {
@@ -21,9 +22,11 @@ export default function Header() {
   const [isLoading, setLoading] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false);
 
+
   useEffect(() => {
     const fetchMenu = async () => {
       try {
+        if (!client) return;
         const result = await client.query({
           query: gql`
             query Menu {
@@ -45,8 +48,9 @@ export default function Header() {
             }
           `,
         });
+        // console.log(result)
         setMenuItems(result.data.menusMenu.data.attributes.items.data.map(((item: { attributes: MenuItem }) => item.attributes)));
-        setLoading(false)
+        setLoading(result.loading)
       } catch (error) {
         console.error("Error fetching menu:", error);
       }
