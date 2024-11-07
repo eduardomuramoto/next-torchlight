@@ -1,16 +1,13 @@
-"use client"
+
 import BlueButton from "@/components/Buttons/blueButton";
 import { Service } from "@/interfaces/service.interface";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import { Metadata } from "next";
+
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from "react";
 
 // import CourseCard from "../Cards/courseCard";
-export const metadata: Metadata = {
-  title: "Services | Torchlight Foundation",
-  description: "Shining light for a better future",
-};
+
 const client = new ApolloClient({
   uri: `${process.env.NEXT_PUBLIC_CMS_GRAPHQL}`,
   cache: new InMemoryCache(),
