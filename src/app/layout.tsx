@@ -1,5 +1,5 @@
+
 "use client"
-import type { Metadata } from "next";
 import { Teko, Roboto } from 'next/font/google'
 import "./globals.css";
 import Footer from "@/components/footer";
@@ -18,10 +18,7 @@ const roboto = Roboto({
   subsets: ['latin'],
 })
 
-// export const metadata: Metadata = {
-//   title: "Torchlight Foundation",
-//   description: "Shining light for a better future",
-// };
+
 
 export default function RootLayout({
   children,

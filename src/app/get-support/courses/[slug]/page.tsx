@@ -7,7 +7,6 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from "react";
 import { Course, RelatedCourse } from "@/interfaces/course.interface";
-import { Metadata } from "next";
 // import CourseCard from "../Cards/courseCard";
 
 const client = new ApolloClient({
