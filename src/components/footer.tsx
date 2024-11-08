@@ -103,7 +103,7 @@ export default function Footer() {
               Contact Us
             </h6>
             <a href="mailto:hq@torchlight.org.au">
-              <p className="mb-4 flex items-center justify-start">
+              <p className="mb-4 flex items-center justify-start text-nowrap">
                 <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@ export default function Footer() {
               </p>
             </a>
             <a href="tel:+1800363228">
-              <p className="mb-4 flex items-center justify-start">
+              <p className="mb-4 flex items-center justify-start text-nowrap">
                 <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ export default function Footer() {
               </p>
             </a>
             <a href="tel:+1800363228">
-              <p className="flex items-center justify-start">
+              <p className="flex items-center justify-start text-nowrap">
                 <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

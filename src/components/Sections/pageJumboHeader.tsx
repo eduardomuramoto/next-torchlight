@@ -9,7 +9,7 @@ export default function JumboHeader({ title, subTitle, paragraphs, imgUrl, style
   const marginTop = alignTop ? "" : "mt-auto";
   return (
     <div id={idName ? idName : ""}
-      className={(reverse ? "flex-row-reverse " : "") + bgColor + " w-full flex flex-wrap lg:flex-nowrap gap-10 lg:gap-20 p-16 lg:px-36"}>
+      className={(reverse ? "flex-row-reverse " : "") + bgColor + " w-full flex flex-wrap lg:flex-nowrap gap-10 lg:gap-20 p-16 px-6 lg:px-36"}>
       <div className="w-full lg:w-1/2 h-1/3">
         <Image
           src={imgUrl ? imgUrl : photo}

@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image"
 import photo from "@images/donate.webp"
 import OrangeButton from "../Buttons/orangeButton";
 
-export default function OverlapSection({ title, paragraphs, imgUrl, style = "orange", reverse = false, smallPicture = false }: { title: string, subTitle: string, paragraphs: string[], imgUrl?: StaticImageData, style?: string, reverse?: boolean, smallPicture?: boolean }) {
+export default function OverlapSection({ title, paragraphs, url, label, imgUrl, targetBlank = false, style = "orange", reverse = false, smallPicture = false }: { title: string, subTitle: string, paragraphs: string[], url: string, label: string, imgUrl?: StaticImageData, targetBlank?: boolean, style?: string, reverse?: boolean, smallPicture?: boolean }) {
   const bgColor = style === "orange" ? "bg-lightForeground" : "bg-redBackground";
   const titleColor = style === "orange" ? "text-foreground" : "text-background";
   const reverseCols = reverse ? "flex-row-reverse " : "";
@@ -32,9 +32,10 @@ export default function OverlapSection({ title, paragraphs, imgUrl, style = "ora
               <p className="text-gray-800 pb-4">Over the past year, we have helped over 1,000 individuals in our community improve their mental health and well-being.</p>
             </>
           }
-          <a href="https://www.torchlight.org.au/donation" target="_blank">
-            <OrangeButton label="Donate" />
+          <a href={url} target={targetBlank ? "_blank" : ""}>
+            <OrangeButton label={label} />
           </a>
+
         </div>
       </div>
     </div>

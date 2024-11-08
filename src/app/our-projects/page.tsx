@@ -14,7 +14,7 @@ export default function OurProjectsPage() {
   return (
     <div className="">
       <main className="flex flex-col row-start-2 items-center sm:items-start">
-        <div className={"bg-lightForeground w-full flex flex-wrap lg:flex-nowrap gap-10 lg:gap-20 p-16 lg:px-36"}>
+        <div className={"bg-lightForeground w-full flex flex-wrap lg:flex-nowrap gap-10 lg:gap-20 p-16 px-6 lg:px-36"}>
           <div className="w-full mx-auto">
             <div className={" w-full items-center flex flex-col mx-auto"}>
               <h1 className={"font-teko text-6xl text-center uppercase font-semibold pb-6 text-background lg:w-2/3"}>Our Projects</h1>

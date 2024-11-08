@@ -33,6 +33,9 @@ export default function GetInvolvedPage() {
           subTitle="Donate"
           title="Support us financially on our mission to end abuse."
           imgUrl={donatePhoto}
+          label="Donate"
+          url="https://www.torchlight.org.au/donation"
+          targetBlank={true}
           paragraphs={[
             "Shine a light on hope — help us break the cycle of domestic violence. Your donation to the Torchlight Foundation empowers survivors and ignites a future of safety and healing."
           ]}

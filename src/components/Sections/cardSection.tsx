@@ -29,9 +29,9 @@ export default function CardsSection({ title, paragraphs, style = "orange", idNa
 
   return (
     <div id={idName ? idName : ""}
-      className={bgColor + " w-full gap-10 lg:gap-20 p-16 lg:px-36"}>
+      className={bgColor + " w-full gap-10 lg:gap-20 p-16 px-6 lg:px-36"}>
       <h1 className={titleColor + " font-teko text-6xl text-center uppercase font-semibold pb-6"}>{title}</h1>
-      <div className="text-center w-2/3 mx-auto">
+      <div className="text-center sm:w-2/3 mx-auto">
 
         {paragraphs ? paragraphs.map((paragraph) => {
           return (<p className="text-gray-800 pb-4" key={paragraph}>{paragraph}</p>)

@@ -9,7 +9,7 @@ export default function ProjectsSection({ title, paragraphs, style = "orange", i
 
   return (
     <div id={idName ? idName : ""}
-      className={bgColor + " w-full gap-10 lg:gap-20 p-16 md:px-20 lg:px-36"}>
+      className={bgColor + " w-full gap-10 lg:gap-20 p-16 px-6 md:px-20 lg:px-36"}>
       <h1 className={titleColor + " font-teko text-6xl text-center uppercase font-semibold pb-6"}>{title}</h1>
       <div className="text-center lg:w-2/3 mx-auto">
 

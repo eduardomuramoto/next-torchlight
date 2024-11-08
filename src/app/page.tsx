@@ -38,6 +38,8 @@ export default function Home() {
           subTitle="Be a part of the solution!"
           title="Become A Volunteer"
           imgUrl={volunteerPhoto}
+          label="Join Us"
+          url="/get-involved/volunteer"
           paragraphs={[
             " Join us in making a difference in the lives of survivors of domestic violence by volunteering with our dedicated service. You can provide vital support, empowerment, and resources to those in need, helping them rebuild their lives with dignity and hope. Whether you have a few hours to spare or are looking for a longer commitment, your time can create a lasting impact. Be part of our compassionate team today and help us break the cycle of domestic violence, fostering a brighter, safer future for all. "
           ]}
