@@ -115,7 +115,7 @@ export default function Header() {
 
         {/* Burger Menu Button */}
         <button
-          className="lg:hidden block focus:outline-none z-10 mt-5"
+          className="lg:hidden block focus:outline-none z-10"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? (
