@@ -7,6 +7,7 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { useParams, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from "react";
 import { Course } from "@/interfaces/course.interface";
+import Loading from "../loading";
 
 // import CourseCard from "../Cards/courseCard";
 
@@ -110,8 +111,9 @@ export default function BookingCourse() {
       })
   }, [params.slug, course, groupClasses])
 
-  if (isLoading) return <p>Loading...</p>
-  if (!course) return <p>Loading...</ p>
+  if (isLoading) return <Loading />
+  if (!course) return <Loading />
+
 
 
 

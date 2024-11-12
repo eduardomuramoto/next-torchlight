@@ -5,6 +5,7 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from "react";
+import Loading from "../loading";
 
 // import CourseCard from "../Cards/courseCard";
 
@@ -89,8 +90,8 @@ export default function BookingService() {
       })
   }, [params.slug, service])
 
-  if (isLoading) return <p>Loading...</p>
-  if (!service) return <p>No service data</p>
+  if (isLoading) return <Loading />
+  if (!service) return <Loading />
 
 
 
