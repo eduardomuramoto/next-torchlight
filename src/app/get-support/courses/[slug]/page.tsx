@@ -98,7 +98,7 @@ export default function CoursePage() {
   }, [params.slug, course])
 
   if (isLoading) return <Loading />
-  if (!course) return <p>No course data</p>
+  if (!course) return <Loading />
 
 
   return (
