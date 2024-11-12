@@ -1,12 +1,16 @@
-/* eslint-disable no-use-before-define */
 "use client"
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
-
+type SessionProps = {
+  customer_details: {
+    name: string;
+  },
+  amount_total: number;
+}
 const DonationSuccessPage = () => {
   const session_id = useSearchParams().get("session_id");
-  const [session, setSession] = useState<string | null>(null);
+  const [session, setSession] = useState<SessionProps | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
