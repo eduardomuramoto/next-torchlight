@@ -16,7 +16,8 @@ export default function JusticeRadioHeader() {
       </div>
       <div className={"w-full lg:w-1/2 float-start lg:pl-8 pt-8"}>
         <p className="mb-10 text-gray-900">The Justice Radio podcast, hosted by Kylee Stone, amplifies the voices of survivors of abuse, fostering crucial discussions about domestic violence and exploring how we can all contribute to ending abuse.</p>
-        <BlueButton label="View Podcast" url="https://www.youtube.com/@TorchlightFoundation" afterIcon="yes" />
+        <BlueButton label="View Podcast" url="https://www.youtube.com/@TorchlightFoundation" afterIcon="yes" isBlankPage={true} />
+
       </div>
 
     </div>

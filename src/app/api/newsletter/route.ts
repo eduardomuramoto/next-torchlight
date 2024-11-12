@@ -10,9 +10,9 @@ const MAILCHIMP_SERVER_PREFIX = process.env.MAILCHIMP_SERVER_PREFIX;
 const MAILCHIMP_AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
 
 export async function POST(request: Request) {
-  console.log("Mailchimp API Key:", MAILCHIMP_API_KEY);
-  console.log("Mailchimp Server Prefix:", MAILCHIMP_SERVER_PREFIX);
-  console.log("Mailchimp List ID:", MAILCHIMP_AUDIENCE_ID);
+  // console.log("Mailchimp API Key:", MAILCHIMP_API_KEY);
+  // console.log("Mailchimp Server Prefix:", MAILCHIMP_SERVER_PREFIX);
+  // console.log("Mailchimp List ID:", MAILCHIMP_AUDIENCE_ID);
   if (!MAILCHIMP_API_KEY || !MAILCHIMP_SERVER_PREFIX || !MAILCHIMP_AUDIENCE_ID) {
     return NextResponse.json({ error: "Missing Mailchimp configuration" }, { status: 500 });
   }

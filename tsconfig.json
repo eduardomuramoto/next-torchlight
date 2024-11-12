@@ -39,7 +39,9 @@
     "src/app/get-support/courses/[slug]/page.tsx.backup",
     "src/components/Buttons/outlineButton.tsx.bckp",
     "src/app/api/checkout/route.ts.bckup",
-    "src/app/get-support/courses/booking/[slug]/page.tsx.stripe"
+    "src/app/get-support/courses/booking/[slug]/page.tsx.stripe",
+    "src/app/get-involved/donate/success/page.tsx.bckp",
+    "src/app/get-involved/donate/success/page.tsx.bckup"
   ],
   "exclude": [
     "node_modules"
