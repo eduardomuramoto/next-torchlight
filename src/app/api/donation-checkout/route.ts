@@ -23,7 +23,7 @@ export async function POST(req: Request) {
       line_items: [
         {
           price_data: {
-            currency: 'usd',
+            currency: 'aud',
             product_data: {
               name: 'Donation',
             },
@@ -32,8 +32,8 @@ export async function POST(req: Request) {
           quantity: 1,
         },
       ],
-      success_url: `${process.env.NEXT_PUBLIC_DOMAIN}/donation-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_DOMAIN}/donation-cancel`,
+      success_url: `${process.env.NEXT_PUBLIC_DOMAIN}/get-involved/donate/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_DOMAIN}/get-involved/donate/error`,
     });
 
     return NextResponse.json({ sessionId: session.id }, { status: 200 });

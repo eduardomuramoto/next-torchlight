@@ -39,23 +39,27 @@ export default function DonationPage() {
   };
 
   return (
-    <div>
-      <h1>Donate</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="amount">
-          Donation Amount (in AUD):
-          <input
-            type="number"
-            id="amount"
-            min="1"
-            value={amount / 100} // Convert to dollars for user input
-            onChange={(e) => setAmount(Number(e.target.value) * 100)} // Convert to cents
-          />
-        </label>
-        <button type="submit" disabled={loading}>
-          {loading ? 'Processing...' : 'Donate'}
-        </button>
-      </form>
+    <div className="">
+      <main className="flex flex-col row-start-2 items-center sm:items-start">
+        <div className="relative w-full p-10 md:px-20 bg-white">
+          <h1>Donate</h1>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="amount">
+              Donation Amount (in AUD):
+              <input
+                type="number"
+                id="amount"
+                min="1"
+                value={amount / 100} // Convert to dollars for user input
+                onChange={(e) => setAmount(Number(e.target.value) * 100)} // Convert to cents
+              />
+            </label>
+            <button type="submit" disabled={loading}>
+              {loading ? 'Processing...' : 'Donate'}
+            </button>
+          </form>
+        </div>
+      </main>
     </div>
   );
 }
