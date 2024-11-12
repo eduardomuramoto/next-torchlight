@@ -5,7 +5,6 @@ import volunteerPhoto from "@images/Volunteer.jpg"
 import JusticeRadioHeader from "@/components/Sections/justiceRadioSection";
 import ProjectsSection from "@/components/Sections/ProjectsSection";
 import { Metadata } from "next";
-import Loading from "@/components/loading";
 
 export const metadata: Metadata = {
   title: "Torchlight Foundation",
