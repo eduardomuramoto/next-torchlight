@@ -1,52 +1,22 @@
-"use client"
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 
-type SessionProps = {
-  customer_details: {
-    name: string;
-  },
-  amount_total: number;
-}
-const DonationSuccessPage = () => {
-  const session_id = useSearchParams().get("session_id");
-  const [session, setSession] = useState<SessionProps | null>(null);
-  const [loading, setLoading] = useState(true);
+import React from 'react';
+import OrangeButton from '@/components/Buttons/orangeButton';
 
-  useEffect(() => {
-    if (!session_id) return;
-
-    const fetchSession = async () => {
-      try {
-        const response = await fetch(`/api/donation-checkout-session/${session_id}`);
-        if (!response.ok) {
-          throw new Error("Failed to fetch session data");
-        }
-        const data = await response.json();
-        setSession(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching session:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchSession();
-  }, [session_id]);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (!session) {
-    return <p>Error: Could not retrieve session data.</p>;
-  }
+const DonationSuccessPage: React.FC = () => {
   return (
-    <div className="w-full bg-lightBackground flex flex-col items-center justify-center p-16 px-6 lg:px-20">
-      <h1 className="font-teko text-6xl uppercase font-semibold pb-6 text-background">Thank You, {session.customer_details.name}, for Your Donation!</h1>
-      <p className="font-teko text-4xl pb-6 text-background">Your donation of ${session.amount_total / 100} has been successfully processed.</p>
-      <p className="font-teko text-2xl pb-6 text-background">If you have any questions, please contact us.</p>
-    </div>
+    <div className="">
+      <main className="flex flex-col items-center justify-center bg-gray-100 p-4">
+        <div className="max-w-md p-8 bg-white rounded-lg shadow-lg">
+          <h1 className="text-2xl font-semibold text-red-600 mb-4 text-center">Donation Canceled</h1>
+          <p className="text-gray-700 mb-6 text-center">
+            Your donation process was canceled. If this was a mistake or if you would like to try again, please revisit the donation page.
+          </p>
+          <div className="flex justify-center">
+            <OrangeButton label="Go to Donation Page" url="/get-involved/donate" />
+          </div>
+        </div>
+      </main>
+    </div >
   );
 };
 
