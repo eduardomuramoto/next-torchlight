@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 "use client"
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
@@ -38,9 +39,9 @@ const DonationSuccessPage = () => {
   }
   return (
     <div className="w-full bg-lightBackground flex flex-col items-center justify-center p-16 px-6 lg:px-20">
-      {/* <h1 className="font-teko text-6xl uppercase font-semibold pb-6 text-background">Thank You, {session.customer_details.name}, for Your Donation!</h1>
+      <h1 className="font-teko text-6xl uppercase font-semibold pb-6 text-background">Thank You, {session.customer_details.name}, for Your Donation!</h1>
       <p className="font-teko text-4xl pb-6 text-background">Your donation of ${session.amount_total / 100} has been successfully processed.</p>
-      <p className="font-teko text-2xl pb-6 text-background">If you have any questions, please contact us.</p> */}
+      <p className="font-teko text-2xl pb-6 text-background">If you have any questions, please contact us.</p>
     </div>
   );
 };
