@@ -67,8 +67,11 @@ export default function CourseBookingCard({ courseColor, category, price, slug, 
           </div>
           <div>
             <div className="flex flex-col mb-4">
+              <p className="pt-2 text-md font-bold">Select study option</p>
+
               {location.includes("In Person") ? (<label className="flex text-gray-600 text-sm items-center pr-2">
                 <input
+                  className="mr-1"
                   type="radio"
                   name="location"
                   required={true}
@@ -78,6 +81,7 @@ export default function CourseBookingCard({ courseColor, category, price, slug, 
                 /> In-Person</label>) : ""}
               {location.includes("Online") ? (<label className="flex text-gray-600 text-sm items-center pr-2">
                 <input
+                  className="mr-1"
                   type="radio"
                   name="location"
                   required={true}
@@ -87,9 +91,10 @@ export default function CourseBookingCard({ courseColor, category, price, slug, 
                 /> Online</label>) : ""}
             </div>
             <div>
-              <p className="pt-2 text-lg font-bold">Request a group class</p>
+              <p className="pt-2 text-md font-bold">Request a group class</p>
               <label className="flex text-gray-600 text-sm items-center pr-2">
                 <input
+                  className="mr-1"
                   type="checkbox"
                   name="groupClasses"
                   checked={formData.groupClasses}
