@@ -1,6 +1,6 @@
 "use client"
 import Image, { StaticImageData } from "next/image";
-import iconImage from "@images/icons/course/understand.png"
+import iconPlaceholder from "@images/icons/course/placeholder.png"
 import { getStaticImage } from "@/lib/getStaticImage";
 import { useState, useEffect } from "react";
 
@@ -25,7 +25,7 @@ export default function IconCard({ icon, objective, folder = "course", isBold = 
   return (
     <div className="flex flex-col items-center max-h-80 max-w-72 py-4 px-6 text-background font-semibold rounded-md">
       <Image
-        src={imageData ? imageData : iconImage}
+        src={imageData ? imageData : iconPlaceholder}
         alt="icon image"
         className="lazyload w-[100px]"
         height={300}
