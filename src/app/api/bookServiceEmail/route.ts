@@ -16,7 +16,7 @@ export async function POST(req: Request) {
   try {
     // Send email
     await transporter.sendMail({
-      from: email,
+      from: `Enquiry - Torchlight Foundation < ${process.env.RECIPIENT_EMAIL} >`,
       to: process.env.RECIPIENT_EMAIL, // The email address where you want to receive the enquiry
       subject: `New Enquiry from ${name}`,
       text: `
