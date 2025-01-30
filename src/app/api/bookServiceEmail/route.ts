@@ -32,7 +32,7 @@ export async function POST(req: Request) {
 
     // Send confirmation email to the user
     await transporter.sendMail({
-      from: process.env.RECIPIENT_EMAIL,
+      from: `Enquiry - Torchlight Foundation < ${process.env.RECIPIENT_EMAIL} >`,
       to: email, // The user's email
       subject: `Email Confirmation for Booking, ${name}!`,
       text: `
