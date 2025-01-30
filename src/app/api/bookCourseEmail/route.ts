@@ -54,6 +54,7 @@ export async function POST(req: Request) {
         Total: ${coursePrice * quantity } AUD
 
         We will get back to you shortly.
+        For any questions, please reach out to us at hq@torchlight.org.au. We look forward to assisting you!
 
         Best regards,
         Torchlight Foundation
